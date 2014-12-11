@@ -18,6 +18,7 @@ class JsSpider(scrapy.Spider):
 
         reference = ReferenceItem()
         reference['name'] = response.xpath('//h1/text()').extract()[0]
+        reference['alias'] = reference['name']
         reference['url'] = urlparse.urlsplit(response.url)[2]
         reference['content'] = response.xpath('//article').extract()[0]
         reference['path'] = [p for p in response.css('.crumbs').xpath('.//a/text()').extract() if p not in self.excluded_path]
@@ -51,4 +52,10 @@ class JsSpider(scrapy.Spider):
         return "others";
 
     def getSlashUrl(self,path, name):
-        return '/'+('/'.join(path)+'/'+name).lower()
+        if name!='':
+          return '/'+('/'.join(path)+'/'+name).lower()
+        else:
+          if len(path)>1:
+            return '/'+('/'.join(path)).lower()
+          else:
+            return None

@@ -1,0 +1,488 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=" js flexbox flexboxlegacy datauri"><head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Basic syntax - Manual </title>
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <form class="navbar-search" id="topsearch" action="/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: 'Fira Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="language.basic-syntax.phptags.php">
+          PHP tags »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="langref.php">
+          « Language Reference        </a>
+      </div>
+          <ul>
+            <li><a href="index.php">PHP Manual</a></li>      <li><a href="langref.php">Language Reference</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/language.basic-syntax.php" selected="selected">English</option>
+            <option value="pt_BR/language.basic-syntax.php">Brazilian Portuguese</option>
+            <option value="zh/language.basic-syntax.php">Chinese (Simplified)</option>
+            <option value="fr/language.basic-syntax.php">French</option>
+            <option value="de/language.basic-syntax.php">German</option>
+            <option value="it/language.basic-syntax.php">Italian</option>
+            <option value="ja/language.basic-syntax.php">Japanese</option>
+            <option value="ro/language.basic-syntax.php">Romanian</option>
+            <option value="ru/language.basic-syntax.php">Russian</option>
+            <option value="es/language.basic-syntax.php">Spanish</option>
+            <option value="tr/language.basic-syntax.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.basic-syntax.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.basic-syntax">Report a Bug</a>
+    </div>
+  </div><div id="language.basic-syntax" class="chapter">
+  <h1>Basic syntax<a class="genanchor" href="#language.basic-syntax"></a></h1>
+<h2>Table of Contents<a class="genanchor" href="#language.basic-syntax">¶</a></h2><ul class="chunklist chunklist_chapter"><li><a href="language.basic-syntax.phptags.php">PHP tags</a></li><li><a href="language.basic-syntax.phpmode.php">Escaping from HTML</a></li><li><a href="language.basic-syntax.instruction-separation.php">Instruction separation</a></li><li><a href="language.basic-syntax.comments.php">Comments</a></li></ul>
+
+  
+  
+  
+  
+ </div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="/manual/add-note.php?sect=language.basic-syntax&amp;redirect=http://php.net/manual/en/language.basic-syntax.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">11 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="38084">  <div class="votes">
+    <div id="Vu38084">
+    <a href="/manual/vote-note.php?id=38084&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd38084">
+    <a href="/manual/vote-note.php?id=38084&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V38084" title="49% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#38084" class="name">
+  <strong class="user"><em>johnbeech at (not saying) mkv25 dot net</em></strong></a><a class="genanchor" href="#38084"> ¶</a><div class="date" title="2003-12-07 04:42"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom38084" style="opacity: 0.55;">
+<div class="phpcode"><code><span class="html">
+In the note above about escaping XML/PHP style &lt;?xml tags, the following code was used:
+<br>
+<br><span class="default">&lt;?php&nbsp; </span><span class="comment">// Html safe containers
+<br>
+<br>&nbsp;&nbsp; </span><span class="keyword">echo &lt;&lt;&lt;EOD
+<br></span><span class="string">&lt;?xml version="1.0"?&gt;
+<br>...all sorts of XML goes here...
+<br>Nothing will affect the output of this code until:
+<br></span><span class="keyword">EOD;
+<br></span><span class="default">?&gt;
+<br></span>
+<br>EOD is just an example stop/start name.
+<br>
+<br>This works too:
+<br>
+<br><span class="default">&lt;?php&nbsp; </span><span class="comment">// Html safe containers
+<br>
+<br>&nbsp; </span><span class="default">$myOutput </span><span class="keyword">= &lt;&lt;&lt;MYHTMLSAFEOUTPUT
+<br></span><span class="string">&lt;?xml version="1.0"?&gt;
+<br>&lt;html&gt;
+<br>&nbsp; &lt;title&gt;PHP Example&lt;/title&gt;
+<br>&nbsp; &lt;body&gt;
+<br>&nbsp; &nbsp; &lt;p&gt;...all sorts goes here...&lt;/p&gt;
+<br>&nbsp; &lt;/body&gt;
+<br>&lt;/html&gt;
+<br></span><span class="keyword">MYHTMLSAFEOUTPUT;
+<br>
+<br>echo </span><span class="default">$myOutput</span><span class="keyword">;
+<br>
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Only disadvantage of using this is that all the code highlighting programs I've seen never get it right, making your code look eronous in the majority of viewers.
+<br>
+<br>Another alternative is to keep the XML / HTML in a separate include file and read in when needed. I don't know how efficient/inefficient this is for small amounts of text.
+<br>
+<br>xmlheader.txt:
+<br>&lt;?xml version="1.0"?&gt;
+<br>
+<br>mypage.php:
+<br><span class="default">&lt;?php
+<br>&nbsp; </span><span class="keyword">include(</span><span class="string">"xmlheader.txt"</span><span class="keyword">);
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="41654">  <div class="votes">
+    <div id="Vu41654">
+    <a href="/manual/vote-note.php?id=41654&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd41654">
+    <a href="/manual/vote-note.php?id=41654&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V41654" title="44% like this...">
+    -41
+    </div>
+  </div>
+  <a href="#41654" class="name">
+  <strong class="user"><em>mart3862 at yahoo dot com dot au</em></strong></a><a class="genanchor" href="#41654"> ¶</a><div class="date" title="2004-04-18 09:29"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom41654" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Now the ultimate truth on how you should output xml processing instructions:<br><br>There have been several posts suggesting ways to include the text &lt;?xml version="1.0" encoding="utf-8"?&gt; in your output when short_tags is turned on, but only the following should be used:<br><br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'&lt;?xml version="1.0" ?'</span><span class="keyword">.</span><span class="string">'&gt;' </span><span class="default">?&gt;<br></span>or<br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">"&lt;?xml version=\"1.0\"\x3F&gt;" </span><span class="default">?&gt;<br></span><br>Using one of these methods, and not making use of short tags, means your source code will also be a valid XML document, which allows you to do many things with it such as validation, XSLT translations, etc, as well as allowing your text editor to parse your code for syntax colouring.&nbsp; Every PHP tag will simply be interpreted as an XML processing instruction (commonly referred to as PI).<br><br>The reason why all the other suggested methods are not advisable is because they contain the characters ?&gt; inside the PHP tag, which the XML parser will interpret as the end of the processing instruction.<br><br>A processing instruction is defined in XML as:<br><br>PI ::= '&lt;?' PITarget (S (Char* - (Char* '?&gt;' Char*)))? '?&gt;' <br><br>In other words, it explicitly forbids the characters ?&gt; to occur together within a processing instruction, unless they are delimiting the end of the tag.&nbsp; It also requires a PITarget (an identifier starting with a letter) immediately after the initial start delimiter, which means that all short tag formats are also invalid XML.<br><br>Following these guidelines will result in code that is portable to servers with any configuration and allow you perform many useful tasks on your XML or XHTML source documents.&nbsp; Even if you do not intend to validate or translate your source documents, and you can ignore some incorrect syntax colouring in your text editor, it is still best to get into good habits early.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="57086">  <div class="votes">
+    <div id="Vu57086">
+    <a href="/manual/vote-note.php?id=57086&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd57086">
+    <a href="/manual/vote-note.php?id=57086&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V57086" title="45% like this...">
+    -45
+    </div>
+  </div>
+  <a href="#57086" class="name">
+  <strong class="user"><em>php [AT] jsomers [DOT] be</em></strong></a><a class="genanchor" href="#57086"> ¶</a><div class="date" title="2005-09-23 12:37"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom57086" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+PEAR states:
+<br>
+<br>Always use <span class="default">&lt;?php ?&gt;</span> to delimit PHP code, not the &lt;? ?&gt; shorthand. This is required for PEAR compliance and is also the most portable way to include PHP code on differing operating systems and setups.
+<br>
+<br>It is these small things that enhance readability in group projects, or libraries.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="46746">  <div class="votes">
+    <div id="Vu46746">
+    <a href="/manual/vote-note.php?id=46746&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd46746">
+    <a href="/manual/vote-note.php?id=46746&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V46746" title="44% like this...">
+    -46
+    </div>
+  </div>
+  <a href="#46746" class="name">
+  <strong class="user"><em>mike at skew dot org</em></strong></a><a class="genanchor" href="#46746"> ¶</a><div class="date" title="2004-10-21 04:53"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom46746" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+mart3862 mentions "XML processing instructions" and quotes their syntax from the spec, but is mistaken in using<br><br>&lt;?xml version="1.0" ...?&gt;<br><br>as an example. This little bit of markup that appears at the beginning of an XML file is in fact not a processing instruction at all; it is an "XML declaration" -- or, if it appears in an entity other than the main document, a "text declaration". All three constructs are formatted slightly differently, although they all do begin and end with the same.<br><br>The difference between a processing instruction, an XML declaration, or a text declaration is more than just a matter of subtle differences in syntax, though. A processing instruction embodies exactly two opaque, author-defined pieces of information (a 'target' and an 'instruction') that are considered to be part of the document's logical structure and that are thus made available to an application by the XML parser. An XML or text declaration, on the other hand, contains one to three specific pieces of information (version, encoding, standalone status), each with a well-defined meaning. This info provides cues to the parser to help it know how to read the file; it is not considered part of the document's logical structure and is not made available to the application.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="46708">  <div class="votes">
+    <div id="Vu46708">
+    <a href="/manual/vote-note.php?id=46708&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd46708">
+    <a href="/manual/vote-note.php?id=46708&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V46708" title="40% like this...">
+    -41
+    </div>
+  </div>
+  <a href="#46708" class="name">
+  <strong class="user"><em>stooges_cubed at racerx dot net</em></strong></a><a class="genanchor" href="#46708"> ¶</a><div class="date" title="2004-10-20 01:13"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom46708" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+In the note above about escaping XML/PHP style &lt;?xml tags, the following code was used:
+<br>
+<br><span class="default">&lt;?php&nbsp; </span><span class="comment">// Html safe containers
+<br>
+<br>&nbsp;&nbsp; </span><span class="keyword">echo &lt;&lt;&lt;EOD
+<br></span><span class="string">&lt;?xml version="1.0"?&gt;
+<br>...all sorts of XML goes here...
+<br>Nothing will affect the output of this code until:
+<br></span><span class="keyword">EOD;
+<br></span><span class="default">?&gt;
+<br></span>
+<br>EOD is just an example stop/start name.
+<br>
+<br>This works too:
+<br>
+<br><span class="default">&lt;?php&nbsp; </span><span class="comment">// Html safe containers
+<br>
+<br>&nbsp; </span><span class="default">$myOutput </span><span class="keyword">= &lt;&lt;&lt;MYHTMLSAFEOUTPUT
+<br></span><span class="string">&lt;?xml version="1.0"?&gt;
+<br>&lt;html&gt;
+<br>&nbsp; &lt;title&gt;PHP Example&lt;/title&gt;
+<br>&nbsp; &lt;body&gt;
+<br>&nbsp;&nbsp; &lt;p&gt;...all sorts goes here...&lt;/p&gt;
+<br>&nbsp; &lt;/body&gt;
+<br>&lt;/html&gt;
+<br></span><span class="keyword">MYHTMLSAFEOUTPUT;
+<br>
+<br>echo </span><span class="default">$myOutput</span><span class="keyword">;
+<br>
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Only disadvantage of using this is that all the code highlighting programs I've seen never get it right, making your code look eronous in the majority of viewers.
+<br>
+<br>Another alternative is to keep the XML / HTML in a separate include file and read in when needed. I don't know how efficient/inefficient this is for (idiots like yourselves) small amounts of text.
+<br>
+<br>xmlheader.txt:
+<br>&lt;?xml version="1.0"?&gt;
+<br>
+<br>mypage.php:
+<br><span class="default">&lt;?php
+<br>&nbsp; </span><span class="keyword">include(</span><span class="string">"xmlheader.txt"</span><span class="keyword">);
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="17505">  <div class="votes">
+    <div id="Vu17505">
+    <a href="/manual/vote-note.php?id=17505&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd17505">
+    <a href="/manual/vote-note.php?id=17505&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V17505" title="40% like this...">
+    -37
+    </div>
+  </div>
+  <a href="#17505" class="name">
+  <strong class="user"><em>mrtidy at mail dot com</em></strong></a><a class="genanchor" href="#17505"> ¶</a><div class="date" title="2001-12-12 12:36"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom17505" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+[Ed Note:
+<br>This is because of short_tags, &lt;?xml turns php parsing on, because of the &lt;?.
+<br>--irc-html@php.net]
+<br>
+<br>I am moving my site to XHTML and I ran into trouble with the &lt;?xml ?&gt; interfering with the <span class="default">&lt;?php ?&gt;</span> method of escaping for HTML.&nbsp; A quick check of the mailing list confirmed that the current preferred method to cleanly output the &lt;?xml ?&gt; line is to echo it:&lt;br&gt;
+<br><span class="default">&lt;?php </span><span class="keyword">echo(</span><span class="string">"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n"</span><span class="keyword">); </span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="19982">  <div class="votes">
+    <div id="Vu19982">
+    <a href="/manual/vote-note.php?id=19982&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd19982">
+    <a href="/manual/vote-note.php?id=19982&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V19982" title="40% like this...">
+    -44
+    </div>
+  </div>
+  <a href="#19982" class="name">
+  <strong class="user"><em>dave at [nospam] dot netready dot biz</em></strong></a><a class="genanchor" href="#19982"> ¶</a><div class="date" title="2002-03-18 04:21"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom19982" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+A little "feature" of PHP I've discovered is that the <span class="default">&lt;?PHP token requires a space after it whereas after the </span><span class="keyword">&lt;? and &lt;% </span><span class="default">tokens a space is optional</span><span class="keyword">.<br><br></span><span class="default">The error message you get </span><span class="keyword">if </span><span class="default">you miss the space is not too helpful so be warned</span><span class="keyword">!<br><br>(</span><span class="default">These examples only give a warning with error_reporting</span><span class="keyword">(</span><span class="default">E_ALL</span><span class="keyword">) )<br><br>&lt;?</span><span class="default">PHP</span><span class="comment">/*&lt;Some HTML&gt;*/</span><span class="default">?&gt;</span> fails...<br>&lt;?/*&lt;Some HTML&gt;*/?&gt; works...</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="59663">  <div class="votes">
+    <div id="Vu59663">
+    <a href="/manual/vote-note.php?id=59663&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd59663">
+    <a href="/manual/vote-note.php?id=59663&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V59663" title="37% like this...">
+    -44
+    </div>
+  </div>
+  <a href="#59663" class="name">
+  <strong class="user"><em>Michael Newton (http://mike.eire.ca/)</em></strong></a><a class="genanchor" href="#59663"> ¶</a><div class="date" title="2005-12-12 03:17"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom59663" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+The XML declaration does not need to be handled specially.<br><br>You should output it via an echo statement, in case your code is ever used on a server that is (poorly) configured to use short open tags.<br><br>But there's no need to treat the ?&gt; at the end of the string specially.&nbsp; That's because it's in a string.&nbsp; The only thing PHP ever looks for in a string is \ or $ (the latter only in double-quoted strings.)<br><br>I have never had need for the following, as some have suggested below:<br><br><span class="default">&lt;?php<br>$xml</span><span class="keyword">=</span><span class="default">rawurldecode</span><span class="keyword">(</span><span class="string">'%3C%3Fxml%20version%3D%221.0%22%3F%3E'</span><span class="keyword">);<br>echo(</span><span class="default">$xml</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'&lt;?xml version="1.0" ?'</span><span class="keyword">.</span><span class="string">'&gt;' </span><span class="default">?&gt;<br></span><br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">"&lt;?xml version=\"1.0\"\x3F&gt;" </span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="42055">  <div class="votes">
+    <div id="Vu42055">
+    <a href="/manual/vote-note.php?id=42055&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd42055">
+    <a href="/manual/vote-note.php?id=42055&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V42055" title="38% like this...">
+    -48
+    </div>
+  </div>
+  <a href="#42055" class="name">
+  <strong class="user"><em>crtrue at coastal dot edu</em></strong></a><a class="genanchor" href="#42055"> ¶</a><div class="date" title="2004-04-30 11:02"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom42055" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Although you can use the above methods to pass a document off as a valid for the W3C parser, a simpler-and-perfectly-legal method of doing so is to simple declare the document type in a meta tag. Something along these lines (mind the values in 'content' - I haven't personally used the Content-Type method in awhile):<br><br>&lt;meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" /&gt;<br><br>Of course if you're using just XML, and don't use such functions, then the above methods will work just as fine.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="40097">  <div class="votes">
+    <div id="Vu40097">
+    <a href="/manual/vote-note.php?id=40097&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd40097">
+    <a href="/manual/vote-note.php?id=40097&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V40097" title="35% like this...">
+    -46
+    </div>
+  </div>
+  <a href="#40097" class="name">
+  <strong class="user"><em>Anon</em></strong></a><a class="genanchor" href="#40097"> ¶</a><div class="date" title="2004-02-21 06:05"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom40097" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Yet another way of adding the XML processing instruction is to use:<br><br><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'&lt;?xml version="1.0" ?'</span><span class="keyword">.</span><span class="string">'&gt;' </span><span class="default">?&gt;<br></span><br>Because the ? and &gt; are separated, the parser will not terminate before it is supposed to.<br><br>As a side note, the W3C's parser seems to recognise this method (assuming it even checks for the PI).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="51513">  <div class="votes">
+    <div id="Vu51513">
+    <a href="/manual/vote-note.php?id=51513&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd51513">
+    <a href="/manual/vote-note.php?id=51513&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V51513" title="31% like this...">
+    -70
+    </div>
+  </div>
+  <a href="#51513" class="name">
+  <strong class="user"><em>p o r g e s at the gmail dot com server</em></strong></a><a class="genanchor" href="#51513"> ¶</a><div class="date" title="2005-04-01 08:02"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom51513" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+mike at skew dot org, I believe the differentiation is that "x"-"m"-"l" as a PI target is explicitly excluded from the definition of processing instructions.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="/manual/add-note.php?sect=language.basic-syntax&amp;redirect=http://php.net/manual/en/language.basic-syntax.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+    
+        <ul class="parent-menu-list">
+                        <li>
+                <a href="langref.php">Language Reference</a>
+    
+                                    <ul class="child-menu-list">
+    
+                          
+                        <li class="current">
+                            <a href="language.basic-syntax.php" title="Basic syntax">Basic syntax</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.types.php" title="Types">Types</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.variables.php" title="Variables">Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.constants.php" title="Constants">Constants</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.expressions.php" title="Expressions">Expressions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.operators.php" title="Operators">Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.control-structures.php" title="Control Structures">Control Structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.functions.php" title="Functions">Functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.oop5.php" title="Classes and Objects">Classes and Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.namespaces.php" title="Namespaces">Namespaces</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.exceptions.php" title="Exceptions">Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.generators.php" title="Generators">Generators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.references.php" title="References Explained">References Explained</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.variables.php" title="Predefined Variables">Predefined Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.exceptions.php" title="Predefined Exceptions">Predefined Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.interfaces.php" title="Predefined Interfaces and Classes">Predefined Interfaces and Classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="context.php" title="Context options and parameters">Context options and parameters</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="wrappers.php" title="Supported Protocols and Wrappers">Supported Protocols and Wrappers</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+</body></html>
