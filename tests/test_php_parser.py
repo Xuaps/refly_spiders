@@ -1,7 +1,7 @@
 import unittest
 from scrapy.http import HtmlResponse
 from refly_scraper.items import ReferenceItem
-from refly_scraper.spiders.php import PhpSpider
+from refly_spiders.php import PhpSpider
 
 class PhpParserTest(unittest.TestCase):
 	def test_parse(self):
