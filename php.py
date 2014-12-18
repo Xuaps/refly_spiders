@@ -62,7 +62,7 @@ class PhpSpider(scrapy.Spider):
           reference['alias'] = reference['name']
         reference['type'] = u''
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop()
-        reference['content'] = self.getExistingNode(response,self.filterscontent)
+        reference['content'] = self.TransformLinks(self.getExistingNode(response,self.filterscontent))
         reference['path'] = [p for p in response.xpath('//*[@id="breadcrumbs-inner"]//li/a/text()').extract() if p not in self.excluded_path]
 
         yield reference
@@ -138,4 +138,8 @@ class PhpSpider(scrapy.Spider):
         else:
             return response.xpath(criteria).extract()[0]
         return u''
+
+    def TransformLinks(self,content):
+        content = re.sub(r'"(.*).php#(.*)"', r'"\1.php"', content)
+        return content
 

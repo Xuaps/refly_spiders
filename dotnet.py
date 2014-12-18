@@ -9,14 +9,16 @@ from refly_scraper.items import ReferenceItem
 
 class DotNetSpider(scrapy.Spider):
     name = '.NET'
-    excluded_path = [u'MSDN Library', u'.NET Development']
+    excluded_path = [u'MSDN Library', u'.NET Development', u'.NET Framework 4.5 and 4.6 Preview']
     allowed_domains = ['microsoft.com']
-    visited = []
+    visited = ['http://msdn.microsoft.com/en-us/library/ff361664(v=vs.110).aspx',
+              'http://msdn.microsoft.com/en-us/library/w0x726c2(v=vs.110).aspx',
+              ]
     filterscontent = []
     filtersname = []
     filtersalias = []
     start_urls = (
-        'http://msdn.microsoft.com/en-us/library/w0x726c2(v=vs.110).aspx',
+        'http://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx',
     )
 
     def __init__(self):
@@ -28,19 +30,25 @@ class DotNetSpider(scrapy.Spider):
         ]
 
     def parse(self, response):
-        self.__init__()     
+        self.__init__()
         reference = ReferenceItem()
         reference['name'] = self.unescape(re.sub(u'<[^>]*>', u'', self.getExistingNode(response,self.filtersname))).decode('utf-8')
-        reference['alias'] = reference['name']
-        reference['type'] = reference['name'].split(' ').pop()
+        if self.resolveType(self,reference['name'])=='namespace':
+                reference['alias'] = reference['name'].split(' ')[:-1]
+        else:
+                reference['alias'] = reference['name']
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop().decode('utf-8')
         reference['content'] = self.getExistingNode(response,self.filterscontent)
-        reference['path'] = [p for p in response.xpath('//div[@id="tocnav"]/div[@data-toclevel<"2"]/a/text()').extract() if p not in self.excluded_path]
+        reference['path'] = [p for p in response.xpath('//div[@id="tocnav"]/div[@data-toclevel<1]/a/text()').extract() if p not in self.excluded_path]
         yield reference
 
-        urls = [self.visit(urlparse.urljoin(response.url, url)) for url in response.xpath('//a[re:test(@href, "^.*\(v=vs\.110\).aspx$")]/@href').extract() if urlparse.urljoin(response.url, url) not in self.visited]
+        #urls = [self.visit(urlparse.urljoin(response.url, url)) for url in self.filterLink(response,'//div[@class="tocnav"]//a/@href','(\/en-us\/library\/.*\(v=vs\.110\).aspx)') if urlparse.urljoin(response.url, url) not in self.visited]
+        urls = [self.visit(urlparse.urljoin(response.url, url)) for url in response.xpath('//a[re:test(@href, "^\/en-us\/library\/.*\(v=vs\.110\).aspx$")]/@href').extract() if urlparse.urljoin(response.url, url) not in self.visited]
+
+
 
         for i in urls:
+           
             yield i
 
     def visit(self, url):
@@ -59,12 +67,12 @@ class DotNetSpider(scrapy.Spider):
     def getSlashUrl(self,path, name):
         if name!='':
           if len(path)>0:
-            return (u'/.Net/'+('/'.join(path)+'/'+name)).replace('"','').replace("'","").replace(' ', '_').lower()
+            return unicode(u'/.net/'+('/'.join(path) + '/' + name)).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
-            return u'/.Net/' + name.lower().replace('"','').replace("'","").replace(' ', '_').lower()
+            return u'/.net/' + name.lower().replace('"','').replace("'","").replace(' ', '_').lower()
         else:
           if len(path)>0:
-            return (u'/.Net/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()
+            return unicode(u'/.net/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
             return None
 
@@ -82,9 +90,19 @@ class DotNetSpider(scrapy.Spider):
         return u''
 
     def unescape(self,htmltext):
-      htmltext = htmltext.replace(u'&lt;', u'<')
-      htmltext = htmltext.replace(u'&gt;', u'>')
-      htmltext = htmltext.replace(u'&amp;', u'and')
-      return htmltext.strip()
+        htmltext = htmltext.replace(u'&lt;', u'<')
+        htmltext = htmltext.replace(u'&gt;', u'>')
+        htmltext = htmltext.replace(u'&amp;', u'and')
+        return htmltext.strip()
 
 
+    def filterLink(self,response,xpathexp, regexp):
+         hrefs = response.xpath(xpathexp).extract()
+         regex = re.compile(regexp)
+         newhrefs = []
+         for a in hrefs:
+             if regex.match(a):
+                 a.split('?')[:-1]
+                 if a not in newhrefs:
+                     newhrefs.append(a)
+         return newhrefs

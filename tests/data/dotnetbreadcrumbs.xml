@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="tocnav">
+
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="5DDC0A78-6B2C-43E3-9C56-55F45C0DFFA5_MSDN.10_en-us" mtpsshortid="ms123401_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ff361664(v=vs.110).aspx" id="aa139615_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="43e22490-fb00-409c-8301-585a03034ae2_MSDN.10_en-us" mtpsshortid="ff361664_VS.110_en-us" title=".NET Development">.NET Development</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/w0x726c2(v=vs.110).aspx" id="aa139616_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="f61f02f2-2f20-483d-8f56-a9c8f3a54986_MSDN.10_en-us" mtpsshortid="w0x726c2_VS.110_en-us" title=".NET Framework 4.5 and 4.6 Preview">.NET Framework 4.5 and 4.6 Preview</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145045(v=vs.110).aspx" id="hh795167_VS.110_en-us" mtpsaliasid="" mtpsassetid="e18143ab-e34f-496a-9092-14147075f668_VS.110_en-us" mtpsshortid="gg145045_VS.110_en-us" title=".NET Framework Class Library">.NET Framework Class Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145035(v=vs.110).aspx" id="hh798007_VS.110_en-us" mtpsaliasid="" mtpsassetid="8b776fd8-84dd-c987-40cf-277eb0bde634_VS.110_en-us" mtpsshortid="gg145035_VS.110_en-us" title="System.Collections Namespaces">System.Collections Namespaces</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/System.Collections.Generic(v=vs.110).aspx" id="ff375140_VS.110_en-us" mtpsaliasid="System.Collections.Generic" mtpsassetid="N:System.Collections.Generic_VS.110_en-us" mtpsshortid="0sbxh9x2_VS.110_en-us" title="System.Collections.Generic">System.Collections.Generic</a>            </div>
+            <div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
+<a class="toc_expanded" href="#"></a><a data-tochassubtree="true" href="/en-us/library/cfttsh47(v=vs.110).aspx" id="hh617768_VS.110_en-us" mtpsaliasid="" mtpsassetid="T:System.Collections.Generic.Comparer`1_VS.110_en-us" mtpsshortid="cfttsh47_VS.110_en-us" title="Comparer(T) Class">Comparer(T) Class</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="/en-us/library/a42axckh(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Comparer(T) Constructor">Comparer(T) Constructor</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/158d14eb(v=vs.110).aspx" id="hh576067_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Comparer(T) Methods">Comparer(T) Methods</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/y1bx0fhw(v=vs.110).aspx" id="hh591285_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Comparer(T) Properties">Comparer(T) Properties</a>            </div>
+</div>
