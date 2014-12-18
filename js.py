@@ -18,9 +18,8 @@ class JsSpider(scrapy.Spider):
 
         reference = ReferenceItem()
         reference['name'] = response.xpath('//h1/text()').extract()[0]
-        reference['alias'] = reference['name']
         reference['url'] = urlparse.urlsplit(response.url)[2]
-        reference['content'] = response.xpath('//article').extract()[0]
+        reference['content'] = self.TransformLinks(response.xpath('//article').extract()[0],response)
         reference['path'] = [p for p in response.css('.crumbs').xpath('.//a/text()').extract() if p not in self.excluded_path]
 
         yield reference
@@ -52,10 +51,19 @@ class JsSpider(scrapy.Spider):
         return "others";
 
     def getSlashUrl(self,path, name):
-        if name!='':
-          return '/'+('/'.join(path)+'/'+name).lower()
-        else:
-          if len(path)>1:
-            return '/'+('/'.join(path)).lower()
-          else:
-            return None
+        return '/'+('/'.join(path)+'/'+name).lower()
+
+
+
+    def TransformLinks(self,content,response):
+        validlink = re.compile(u'^\/en-US\/docs\/Web\/JavaScript\/Reference((?!\\$|#).)*')
+        links = response.xpath('//a/@href').extract()
+        for link in links:
+            #print link +'\n'
+            if validlink.match(link) is None:
+                #print link +'\n'
+                if urlparse.urlparse(link).scheme=='':
+                    content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link)+ '"',1)           
+            
+        #content = re.sub(r'"(.*)#(.*)"', r'"\1"', content)
+        return content
