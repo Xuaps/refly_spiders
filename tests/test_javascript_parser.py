@@ -12,7 +12,7 @@ class JavaScriptParserTest(unittest.TestCase):
 
         result = spider.parse(response)
         item = result.next()
-        #print item['content']
+        print item['content']
         self.assertEqual(item['name'], 'JavaScript reference')
         self.assertEqual(item['url'], '/en-US/docs/Web/JavaScript/Reference')
         self.assertIsNotNone(item['content'])

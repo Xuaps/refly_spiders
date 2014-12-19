@@ -18,6 +18,7 @@ class JsSpider(scrapy.Spider):
 
         reference = ReferenceItem()
         reference['name'] = response.xpath('//h1/text()').extract()[0]
+        reference['alias'] = reference['name']
         reference['url'] = urlparse.urlsplit(response.url)[2]
         reference['content'] = self.TransformLinks(response.xpath('//article').extract()[0],response)
         reference['path'] = [p for p in response.css('.crumbs').xpath('.//a/text()').extract() if p not in self.excluded_path]
@@ -51,9 +52,13 @@ class JsSpider(scrapy.Spider):
         return "others";
 
     def getSlashUrl(self,path, name):
-        return '/'+('/'.join(path)+'/'+name).lower()
-
-
+        if name!='':
+            return '/'+('/'.join(path)+'/'+name).lower().replace(' ', '_')
+        else:
+            if len(path)>1:
+                return '/'+('/'.join(path)).lower().replace(' ', '_')
+            else:
+                return None
 
     def TransformLinks(self,content,response):
         validlink = re.compile(u'^\/en-US\/docs\/Web\/JavaScript\/Reference((?!\\$|#).)*')
