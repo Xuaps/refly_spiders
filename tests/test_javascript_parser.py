@@ -12,11 +12,10 @@ class JavaScriptParserTest(unittest.TestCase):
 
         result = spider.parse(response)
         item = result.next()
-        print item['content']
-        self.assertEqual(item['name'], 'JavaScript reference')
+        self.assertEqual(item['name'], 'JSON.parse()')
         self.assertEqual(item['url'], '/en-US/docs/Web/JavaScript/Reference')
         self.assertIsNotNone(item['content'])
-        self.assertEqual(item['path'], ['JavaScript'])
+        self.assertEqual(item['path'], [u'JavaScript', u'JavaScript reference', u'Standard built-in objects', u'JSON'])
 
     def test_getSlashUrl(self):
         pass
