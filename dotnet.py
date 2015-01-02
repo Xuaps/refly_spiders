@@ -67,12 +67,12 @@ class DotNetSpider(scrapy.Spider):
     def getSlashUrl(self,path, name):
         if name!='':
           if len(path)>0:
-            return unicode(u'/.net/'+('/'.join(path) + '/' + name)).replace('"','').replace("'","").replace(' ', '_').lower()
+            return unicode(u'/dotnet/'+('/'.join(path) + '/' + name)).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
-            return u'/.net/' + name.lower().replace('"','').replace("'","").replace(' ', '_').lower()
+            return u'/dotnet/' + name.lower().replace('"','').replace("'","").replace(' ', '_').lower()
         else:
           if len(path)>0:
-            return unicode(u'/.net/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()
+            return unicode(u'/dotnet/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
             return None
 

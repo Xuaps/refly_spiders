@@ -15,7 +15,6 @@ class JsSpider(scrapy.Spider):
     )
 
     def parse(self, response):
-
         reference = ReferenceItem()
         reference['name'] = response.xpath('//h1/text()').extract()[0]
         reference['alias'] = reference['name']
@@ -70,5 +69,5 @@ class JsSpider(scrapy.Spider):
                 if urlparse.urlparse(link).scheme=='':
                     content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link)+ '"',1)           
             
-        #content = re.sub(r'"(.*)#(.*)"', r'"\1"', content)
+        content = re.sub(r'"(.*)#(.*)"', r'"\1"', content)
         return content
