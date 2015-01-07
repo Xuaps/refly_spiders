@@ -21,7 +21,7 @@ class PhpSpider(scrapy.Spider):
     def __init__(self):
       #scrapy.log.start(self.name+'.log',scrapy.log.CRITICAL, False)
       self.filtersalias = [
-        {'filter': '//li[@class="current"]/a/','extract': '/text()'}
+        {'filter': '//li[@class="current"]/a','extract': '/text()'}
       ]
       self.filtersname = [
         {'filter': u'//div[@class="reference"]//h1[@class="title"]', 'extract': u''},
@@ -77,49 +77,50 @@ class PhpSpider(scrapy.Spider):
         return scrapy.Request(url, callback=self.parse)
 
     def resolveType(self, url, name):
-        if re.search(r'^.*language.types\.(.*).*$',url)!=None:
+        if re.search(r'^.*types.*$',url)!=None:
             return 'type'
-        elif re.search(r'^.*language.pseudo-types\.(.*).*$',url)!=None:
-            return 'type'
-        elif re.search(r'^.*language.variables\.(.*).*$',url)!=None:
+        elif re.search(r'^.*interface.*$',name.lower())!=None:
+            return 'interface'
+        elif re.search(r'^.*variables.*$',url)!=None:
             return 'variable'
-        elif re.search(r'^.*language.constants\.(.*).*$',url)!=None:
+        elif re.search(r'^.*language.constants.*$',url)!=None:
             return 'constant'
-        elif re.search(r'^.*language.expressions\.(.*).*$',url)!=None:
-            return 'expression'
-        elif re.search(r'^.*language.operators\.(.*).*$',url)!=None:
-            return 'operators'
-        elif re.search(r'^.*control-structures\.(.*).*$',url)!=None:
-            return 'control structures'
-        if re.search(r'^.*function\.(.*).*$',url)!=None:
+        elif re.search(r'^.*language.expressions.*$',url)!=None:
+            return 'guide'
+        elif re.search(r'^.*language.operators.*$',url)!=None:
+            return 'guide'
+        elif re.search(r'^.*control-structures.*$',url)!=None:
+            return 'guide'
+        if re.search(r'^.*function.*$',url)!=None:
             return 'function'
-        elif re.search(r'^.*language.oop5\.(.*).*$',url)!=None:
+        elif re.search(r'^.*language.oop5.*$',url)!=None:
             return 'class'
-        elif re.search(r'^.*class\.(.*).*$',url)!=None:
+        elif re.search(r'^.*class.*$',url)!=None:
             return 'class'
-        elif re.search(r'^.*language.namespaces\.(.*).*$',url)!=None:
-            return 'namespaces'
-        elif re.search(r'^.*language.exceptions\.(.*).*$',url)!=None:
-            return 'exceptions'
-        elif re.search(r'^.*language.generators\.(.*).*$',url)!=None:
-            return 'generators'
-        elif re.search(r'^.*language.references\.(.*).*$',url)!=None:
-            return 'references'
-        elif re.search(r'^.*reserved.variables\.(.*).*$',url)!=None:
-            return 'predefined variables'
+        elif re.search(r'^.*language.namespaces.*$',url)!=None:
+            return 'namespace'
+        elif re.search(r'^.*language.exceptions.*$',url)!=None:
+            return 'class'
+        elif re.search(r'^.*language.references.*$',url)!=None:
+            return 'guide'
+        elif re.search(r'^.*operators.*$',name.lower())!=None:
+            return 'variable'
         elif re.search(r'^.*context\.(.*).*$',url)!=None:
-            return 'context'
+            return 'guide'
+        elif re.search(r'^.*::.*$',name)!=None:
+            return 'method'
         elif re.search(r'^.*wrappers\.(.*).*$',url)!=None:
-            return 'wrappers'
+            return 'class'
         else:
             return "others";
 
     def getSlashUrl(self,path, name):
+        path = [item.replace('/','-') for item in path]
         if name!='':
           if len(path)>0:
-            return (u'/php/'+('/'.join(path)+'/'+name)).replace('"','').replace("'","").replace(' ', '_').lower()
+            return (u'/php/'+('/'.join(path)+'/'+name.replace('/', '-'))).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
-            return u'/php/' + name.lower().replace('"','').replace("'","").replace(' ', '_').lower()
+            return u'/php/' + name.replace('/', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
         else:
           if len(path)>0:
             return (u'/php/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()

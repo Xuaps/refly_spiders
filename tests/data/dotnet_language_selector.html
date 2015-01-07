@@ -1,29 +1,29 @@
-<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><script type="text/javascript" async="" src="http://i2.msdn.microsoft.com/Areas/Global/Content/Omniture/resources/ms2.js"></script><meta name="WT.seg_1" content="en-us"><link rel="canonical" href="http://msdn.microsoft.com/en-us/library/w0x726c2(v=vs.110).aspx">
-        <title>.NET Framework 4.5 and 4.6 Preview</title>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta name="WT.seg_1" content="en-us"><link rel="canonical" href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx">
+        <title>Object.GetType Method  (System)</title>
 
 
 
 
 
-<meta name="DCS.dcsuri" content="/en-us/library/w0x726c2(d=default,l=en-us,v=vs.110).aspx">
+<meta name="DCS.dcsuri" content="/en-us/library/dfwy45w9(d=default,l=en-us,v=vs.110).aspx">
 
-<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/w0x726c2(d=default,l=en-us,v=vs.110).aspx">
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/dfwy45w9(d=default,l=en-us,v=vs.110).aspx">
 
-<meta name="ms.normalizedurl" content="http://msdn.microsoft.com/en-us/library/w0x726c2(d=default,l=en-us,v=vs.110).aspx">
+<meta name="ms.normalizedurl" content="http://msdn.microsoft.com/en-us/library/dfwy45w9(d=default,l=en-us,v=vs.110).aspx">
 
 <meta name="DCSext.ProductFamily" content="LIB_DG">
 
 <meta name="DCSext.Product" content="NDP_CLR">
 
-<meta name="DCSext.Title" content=".NET Framework 4.5 and 4.6 Preview">
+<meta name="DCSext.Title" content="GetType Method ">
 
-<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/w0x726c2(d=default,l=en-us,v=vs.110).aspx">
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/dfwy45w9(d=default,l=en-us,v=vs.110).aspx">
 
-<meta name="MN" content="FB361392-2:39:07 AM">
+<meta name="MN" content="FB361394-3:42:18 AM">
 
-<meta name="Search.ShortId" content="w0x726c2">
+<meta name="Search.ShortId" content="dfwy45w9">
 
-<meta name="ms.shortidmsdn" content="w0x726c2">
+<meta name="ms.shortidmsdn" content="dfwy45w9">
 
 <meta name="Ms.Locale" content="en-us">
 
@@ -37,7 +37,7 @@
 
 <meta name="ms.sitever" content="2014.12.04.2">
 
-<meta name="ms.assetid" content="f61f02f2-2f20-483d-8f56-a9c8f3a54986">
+<meta name="ms.assetid" content="M:System.Object.GetType">
 
 <meta name="ms.auth" content="0">
 
@@ -49,7 +49,7 @@
 
 
         
-    <link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Combined.css?resources=0:Topic,0:CodeSnippet,0:ProgrammingSelector,0:ExpandableCollapsibleArea,1:CommunityContent,0:TopicNotInScope,0:FeedViewerBasic,0:ImageSprite,2:Header,2:HeaderFooterSprite,3:LinkList,4:PrintExportButton,1:Toc,1:NavigationResize,0:VersionSelector,1:LibraryMemberFilter,2:Footer,3:FooterSock,3:Base,5:Msdn;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Themes/Base/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Library/Themes/Msdn/Content:5&amp;amp;v=9A1635FC1A9DD8B12A88C49550CC1734"><script type="text/javascript" src="//az416426.vo.msecnd.net/scripts/ai.js" async=""></script><script class="mtps-injected">try {
+    <link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Combined.css?resources=0:Topic,0:CodeSnippet,0:ProgrammingSelector,0:ExpandableCollapsibleArea,1:CommunityContent,0:TopicNotInScope,0:FeedViewerBasic,0:ImageSprite,2:Header,2:HeaderFooterSprite,3:LinkList,4:PrintExportButton,1:Toc,1:NavigationResize,0:VersionSelector,1:LibraryMemberFilter,2:Footer,3:FooterSock,3:Base,5:Msdn;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Themes/Base/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Library/Themes/Msdn/Content:5&amp;amp;v=9A1635FC1A9DD8B12A88C49550CC1734"><script type="text/javascript" async="" src="http://i2.msdn.microsoft.com/Areas/Global/Content/Omniture/resources/ms2.js"></script><script type="text/javascript" src="//az416426.vo.msecnd.net/scripts/ai.js" async=""></script><script class="mtps-injected">try {
 /**/
 (window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
 	"image": "http://i.msdn.microsoft.com", 
@@ -60,7 +60,7 @@
 /**/
 } finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script><script class="mtps-injected">try {
 //
-  var literalNormalizedUrl = '/en-us/library/w0x726c2(l=en-us,v=vs.110).aspx';
+  var literalNormalizedUrl = '/en-us/library/dfwy45w9(l=en-us,v=vs.110).aspx';
   var wt_nvr_ru = 'WT_NVR_RU';
   var wt_fpcdom = '.microsoft.com';
   var wt_domlist = 'msdn.microsoft.com';
@@ -87,7 +87,7 @@
 /**/
 } finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script class="mtps-injected">try {
 /**/
-  var omni_guid = "c83f39db-ea52-4a00-b436-ae767e6bf611";
+  var omni_guid = "a615737e-3472-4633-9e1d-47283e7afe9e";
 /**/
 } finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script class="mtps-injected">try {
 //
@@ -112,11 +112,7 @@ $(document).ready(function() {
 
             
             
-            
-    
-
-    
-    <link type="text/css" rel="stylesheet">
+           link type="text/css" rel="stylesheet">
     
     <input type="hidden" id="isHeaderBleeding" value="true">
     <div id="ux-header" dir="ltr" class="ltr msdn">
@@ -149,7 +145,7 @@ $(document).ready(function() {
                     <div class="auxNav">
                         <div id="signIn">
 
-<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1418467147&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=MSDN%24MSDN%24MSDN&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fw0x726c2%2528v%3dvs.110%2529.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in">Sign in</a></div>
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1420198938&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=MSDN%24MSDN%24MSDN&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fsystem.object.gettype%2528v%3dvs.110%2529.aspx%3fcs-save-lang%3d1%26cs-lang%3dcsharp&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in">Sign in</a></div>
 
     
 
@@ -262,7 +258,7 @@ $(document).ready(function() {
 
                                                 <ul class="navL3" style="display: none;">
                                                         <li class="inactive">
-                                                            <a href="http://msdn.microsoft.com/students-overview-msdn" title="Overview">Overview</a>
+                                                            <a href="http://msdn.microsoft.com/students-develop-msdn" title="Develop apps">Develop apps</a>
                                                         </li>
                                                         <li class="inactive">
                                                             <a href="http://blogs.msdn.com/b/microsoft_student_developer_blog" title="Blog">Blog</a>
@@ -358,10 +354,10 @@ $(document).ready(function() {
 
         
     <div class="printExportMenus ltr">
-        <a id="isd_printABook" href="/en-us/library/export/help/?returnUrl=%2fen-us%2flibrary%2fw0x726c2(v%3dvs.110).aspx" style="display: inline;">
+        <a id="isd_printABook" href="/en-us/library/export/help/?returnUrl=%2fen-us%2flibrary%2fsystem.object.gettype(v%3dvs.110).aspx%3fcs-save-lang%3d1%26cs-lang%3dcsharp" style="display: inline;">
             Export (<span class="count">1</span>)
         </a>
-        <a id="isd_print" href="http://msdn.microsoft.com/en-us/library/w0x726c2(d=printer,v=vs.110).aspx" rel="nofollow">
+        <a id="isd_print" href="http://msdn.microsoft.com/en-us/library/system.object.gettype(d=printer,v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=csharp" rel="nofollow">
             Print 
         </a>
     </div>
@@ -384,30 +380,40 @@ $(document).ready(function() {
 
 
 
-    <div id="leftNav" style="width: 280px; max-width: 480px; min-height: 849px; height: auto;">
+    <div id="leftNav" style="width: 369px; max-width: 480px; min-height: 2170px; height: 324px;">
 
 
 
-<div id="tocnav">
+<div id="tocnav" style="width: 369px; position: fixed; top: 60px;">
 
             <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
 <a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="5DDC0A78-6B2C-43E3-9C56-55F45C0DFFA5_MSDN.10_en-us" mtpsshortid="ms123401_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>            </div>
             <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
 <a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ff361664(v=vs.110).aspx" id="aa139615_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="43e22490-fb00-409c-8301-585a03034ae2_MSDN.10_en-us" mtpsshortid="ff361664_VS.110_en-us" title=".NET Development">.NET Development</a>            </div>
-            <div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
-<a class="toc_expanded" href="#"></a><a data-tochassubtree="true" href="/en-us/library/w0x726c2(v=vs.110).aspx" id="aa139616_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="f61f02f2-2f20-483d-8f56-a9c8f3a54986_MSDN.10_en-us" mtpsshortid="w0x726c2_VS.110_en-us" title=".NET Framework 4.5 and 4.6 Preview">.NET Framework 4.5 and 4.6 Preview</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/w0x726c2(v=vs.110).aspx" id="aa139616_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="f61f02f2-2f20-483d-8f56-a9c8f3a54986_MSDN.10_en-us" mtpsshortid="w0x726c2_VS.110_en-us" title=".NET Framework 4.5 and 4.6 Preview">.NET Framework 4.5 and 4.6 Preview</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145045(v=vs.110).aspx" id="hh795167_VS.110_en-us" mtpsaliasid="" mtpsassetid="e18143ab-e34f-496a-9092-14147075f668_VS.110_en-us" mtpsshortid="gg145045_VS.110_en-us" title=".NET Framework Class Library">.NET Framework Class Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/System(v=vs.110).aspx" id="ff374711_VS.110_en-us" mtpsaliasid="System" mtpsassetid="N:System_VS.110_en-us" mtpsshortid="yxcx7skw_VS.110_en-us" title="System">System</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/System.Object(v=vs.110).aspx" id="hh576005_VS.110_en-us" mtpsaliasid="System.Object" mtpsassetid="T:System.Object_VS.110_en-us" mtpsshortid="e5kfa45b_VS.110_en-us" title="Object Class">Object Class</a>            </div>
+            <div class="toclevel1" data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
+<a class="toc_expanded" href="#"></a><a data-tochassubtree="true" href="/en-us/library/System.Object_methods(v=vs.110).aspx" id="hh621896_VS.110_en-us" mtpsaliasid="System.Object_methods" mtpsassetid="Methods.T:System.Object_VS.110_en-us" mtpsshortid="ek57cbk7_VS.110_en-us" title="Object Methods">Object Methods</a>            </div>
             <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
-<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/hh425099(v=vs.110).aspx" id="hh783408_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Getting Started">Getting Started</a>            </div>
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.object.equals(v=vs.110).aspx" id="hh639879_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Equals Method">Equals Method</a>            </div>
             <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
-<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ms171868(v=vs.110).aspx" id="hh569905_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="What's New">What's New</a>            </div>
+<span class="toc_empty"></span><a href="/en-us/library/system.object.finalize(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Finalize Method">Finalize Method</a>            </div>
             <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
-<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/hh156542(v=vs.110).aspx" id="hh781599_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Development Guide">Development Guide</a>            </div>
+<span class="toc_empty"></span><a href="/en-us/library/system.object.gethashcode(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="GetHashCode Method">GetHashCode Method</a>            </div>
+            <div class="toclevel2 current" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="/en-us/library/system.object.gettype(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="GetType Method">GetType Method</a>            </div>
             <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
-<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/d9kh6s92(v=vs.110).aspx" id="hh599823_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Tools">Tools</a>            </div>
+<span class="toc_empty"></span><a href="/en-us/library/system.object.memberwiseclone(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="MemberwiseClone Method">MemberwiseClone Method</a>            </div>
             <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
-<span class="toc_empty"></span><a href="/en-us/library/bb400848(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Samples">Samples</a>            </div>
+<span class="toc_empty"></span><a href="/en-us/library/system.object.referenceequals(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="ReferenceEquals Method">ReferenceEquals Method</a>            </div>
             <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
-<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145045(v=vs.110).aspx" id="hh795167_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title=".NET Framework Class Library">.NET Framework Class Library</a>            </div>
+<span class="toc_empty"></span><a href="/en-us/library/system.object.tostring(v=vs.110).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="ToString Method">ToString Method</a>            </div>
 </div>
         
 
@@ -418,7 +424,7 @@ $(document).ready(function() {
         <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
         
 
-<a id="NavigationResize" href="javascript:void(0)" style="left: 280px; display: inline-block;">
+<a id="NavigationResize" href="javascript:void(0)" style="left: 369px; display: inline-block;">
     <img class="cl_nav_resize_open" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635533092500576233" title="Expand" alt="Expand">
     <img class="cl_nav_resize_close" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635533092500576233" title="Minimize" alt="Minimize" style="display: none;">
 </a>
@@ -426,14 +432,14 @@ $(document).ready(function() {
 
 
     </div>
-<div id="content" class="content" style="margin-left: 280px; width: auto;">
+<div id="content" class="content" style="margin-left: 369px; width: auto;">
 
 
 
 
 
     
-    <div id="FeedbackCounterUrl" data-url="/en-us/library/feedbackcounterasync/w0x726c2(v=vs.110).aspx"></div>
+    <div id="FeedbackCounterUrl" data-url="/en-us/library/feedbackcounterasync/system.object.gettype(v=vs.110).aspx"></div>
     <div id="FeedbackCounterPlaceHolder"><link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Areas/Epx/Shared/Content/FeedbackCounter.css" xmlns="http://www.w3.org/1999/xhtml">
     
     
@@ -448,7 +454,7 @@ $(document).ready(function() {
 <div xmlns="http://www.w3.org/1999/xhtml">
   
   <div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
-    <h1 class="title">.NET Framework 4.5 and 4.6 Preview</h1>
+    <h1 class="title">Object<span xmlns="">.</span>GetType Method </h1>
     
     <div class="lw_vs">
       <div id="curversion">
@@ -466,20 +472,32 @@ $(document).ready(function() {
           </div>
           <div class="cl_vs_arrow clip10x10">
             <img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635533092500576233">
-    </div>
+          </div>
         </div>
         <ul id="vsPanel" style="display: none;">
           <li>
-            <a href="/en-us/library/w0x726c2(v=vs.100).aspx">.NET Framework 4</a>
+            <a href="/en-us/library/system.object.gettype(v=vs.100).aspx">.NET Framework 4</a>
           </li>
           <li>
-            <a href="/en-us/library/w0x726c2(v=vs.90).aspx">.NET Framework 3.5</a>
+            <a href="/en-us/library/system.object.gettype(v=vs.90).aspx">.NET Framework 3.5</a>
+          </li>
+          <li>
+            <a href="/en-us/library/system.object.gettype(v=vs.85).aspx">.NET Framework 3.0</a>
+          </li>
+          <li>
+            <a href="/en-us/library/system.object.gettype(v=vs.80).aspx">.NET Framework 2.0</a>
+          </li>
+          <li>
+            <a href="/en-us/library/system.object.gettype(v=vs.71).aspx">.NET Framework 1.1</a>
+          </li>
+          <li>
+            <a href="/en-us/library/system.object.gettype(v=vs.95).aspx">Silverlight </a>
           </li>
         </ul>
       </div>
     <div id="ratingCounterSeperator" class="cl_lw_vs_seperator" style="display: block;" xmlns="http://www.w3.org/1999/xhtml"></div><div id="ratingCounter" xmlns="http://www.w3.org/1999/xhtml" style="margin: 0px 0px 0px 13px; display: block;">
         <span id="rcA" class="ratingText">
-            1253 out of 1784 rated this helpful <span id="rateThisPrefix">- </span><a id="rateThisTopic" href="#feedback" title="Rate this topic">Rate this topic</a>
+            11 out of 22 rated this helpful <span id="rateThisPrefix">- </span><a id="rateThisTopic" href="#feedback" title="Rate this topic">Rate this topic</a>
             
         </span>
     </div></div>
@@ -490,112 +508,109 @@ $(document).ready(function() {
         <p>
           
         </p>
-        <div class="introduction">
-          <div class="alert">
-            <table>
-              <tbody><tr>
-                <th align="left">
-                  <img id="alert_note" alt="Note" src="http://i.msdn.microsoft.com/areas/global/content/clear.gif" title="Note" xmlns="" class="cl_IC101471">
-                  <strong>Note</strong>
-                </th>
-              </tr>
-              <tr>
-                <td>
-                  <p>This .NET Framework content set includes information for .NET Framework versions 4.5, 4.5.1, 4.5.2 and 4.6 Preview. For a list of new features and changes in the NET Framework 4.5, its point releases and the .NET Framework 4.6 Preview release, see <a href="http://msdn.microsoft.com/en-us/library/ms171868(v=vs.110).aspx">what's new</a>. For a list of supported platforms, see <a href="http://msdn.microsoft.com/en-us/library/8z6watww(v=vs.110).aspx">.NET Framework System Requirements</a>. </p>
-                </td>
-              </tr>
-            </tbody></table>
-          </div>
-          <p>
-            
-          </p>
-          <p>
-            <a href="http://msdn.microsoft.com/en-us/library/5a4x27ek(v=vs.110).aspx">Download the .NET Framework</a>
-          </p>
-          <p>The .NET Framework is a development platform for building apps for Windows, Windows Phone, Windows Server, and Microsoft Azure. It consists of the common language runtime (CLR) and the .NET Framework class library, which includes classes, interfaces, and value types that support an extensive range of technologies. The .NET Framework provides a managed execution environment, simplified development and deployment, and integration with a variety of programming languages, including Visual Basic and Visual C#. </p>
-          <p>For a list of .NET Framework core technologies and app platform support, see the <a href="http://msdn.microsoft.com/en-us/library/jj160347(v=vs.110).aspx">roadmap</a>. For a general introduction to the .NET Framework for both users and developers, see <a href="http://msdn.microsoft.com/en-us/library/hh425099(v=vs.110).aspx">Getting Started</a>. For an introduction to the architecture and key features of the .NET Framework, see the <a href="http://msdn.microsoft.com/en-us/library/zw4w595w(v=vs.110).aspx">overview</a>. </p>
-          <p>The documentation for the .NET Framework includes an extensive class library reference, conceptual overviews, step-by-step procedures, and information about samples, compilers, and command-line tools. To locate the information that interests you, see the following list of main topic areas.  </p>
-        </div>
         <div>
-          
-          <h2 class="LW_CollapsibleArea_TitleDiv">
-            <div>
-              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button">
-                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
-                <span class="LW_CollapsibleArea_Title">In This Section</span>
-              </a>
-              <div class="LW_CollapsibleArea_HrDiv">
-                <hr class="LW_CollapsibleArea_Hr">
-              </div>
-            </div>
-          </h2>
-          <div class="sectionblock">
-            <a id="inThisSectionToggle">
-              
-            </a>
-            <dl class="authored">
-              <dt>
-                <span>
-                  <span>
-                    <a href="http://msdn.microsoft.com/en-us/library/hh425099(v=vs.110).aspx">Getting Started with the .NET Framework</a>
-                  </span>
-                </span>
-              </dt>
-              <dd>
-                <p>Provides a comprehensive overview of the .NET Framework and links to additional resources.</p>
-              </dd>
-              <dt>
-                <span>
-                  <span>
-                    <a href="http://msdn.microsoft.com/en-us/library/ms171868(v=vs.110).aspx">What's New in the .NET Framework</a>
-                  </span>
-                </span>
-              </dt>
-              <dd>
-                <p>Describes key new features and changes in the latest versions of the .NET Framework. Includes lists of obsolete types and members, and provides a guide for migrating your applications from the previous version of the .NET Framework.</p>
-              </dd>
-              <dt>
-                <span>
-                  <span>
-                    <a href="http://msdn.microsoft.com/en-us/library/hh156542(v=vs.110).aspx">.NET Framework Development Guide</a>
-                  </span>
-                </span>
-              </dt>
-              <dd>
-                <p>Provides a guide to all key technology areas and tasks for application development, including creating, configuring, debugging, securing, and deploying your application, and information about dynamic programming, interoperability, extensibility, memory management, and threading.</p>
-              </dd>
-              <dt>
-                <span>
-                  <span>
-                    <a href="http://msdn.microsoft.com/en-us/library/d9kh6s92(v=vs.110).aspx">.NET Framework Tools</a>
-                  </span>
-                </span>
-              </dt>
-              <dd>
-                <p>Describes the tools that help you develop, configure, and deploy applications by using .NET Framework technologies. </p>
-              </dd>
-              <dt>
-                <span>
-                  <span>
-                    <a href="http://msdn.microsoft.com/en-us/library/bb400848(v=vs.110).aspx">.NET Framework Samples</a>
-                  </span>
-                </span>
-              </dt>
-              <dd>
-                <p>Provides links to the MSDN Code Samples Gallery for sample applications that demonstrate .NET Framework technologies.</p>
-              </dd>
-              <dt>
-                <span>
-                  <a href="http://go.microsoft.com/fwlink/?LinkID=227195" target="_blank">.NET Framework Class Library</a>
-                </span>
-              </dt>
-              <dd>
-                <p>Supplies syntax, code examples, and related information for each class contained in the .NET Framework namespaces.</p>
-              </dd>
-            </dl>
+          <div class="summary">
+            <p>Gets the <span><a href="http://msdn.microsoft.com/en-us/library/system.type(v=vs.110).aspx">Type</a></span> of the current instance.</p>
           </div>
         </div>
-      </div>
+        <p>
+          
+        </p> <strong>Namespace:</strong> 
+  &nbsp;<a href="http://msdn.microsoft.com/en-us/library/system(v=vs.110).aspx">System</a><br> <strong>Assembly:</strong>
+  &nbsp;<span>mscorlib</span> (in mscorlib.dll)<div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Syntax</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><a id="syntaxToggle"></a>
+<div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=cpp#code-snippet-1">C++</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=fsharp#code-snippet-1">F#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-1">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e689a8e0-0298-4f4e-a407-a690717da0ae');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_e689a8e0-0298-4f4e-a407-a690717da0ae" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">public</span>&nbsp;Type&nbsp;GetType()
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<div id="returns"><h4 class="subHeading">Return Value</h4>Type: <a href="http://msdn.microsoft.com/en-us/library/system.type(v=vs.110).aspx">System<span xmlns="">.</span>Type</a><br><span><span>The exact runtime type of the current instance.</span><br></span></div></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Remarks</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><a id="remarksToggle"></a><p>For two objects <span class="parameter">x</span> and <span class="parameter">y</span> that have identical runtime types, <span class="code">Object.ReferenceEquals(x.GetType(),y.GetType())</span> returns <span><span class="input">true</span></span>. The following example uses the <span><span class="selflink">GetType</span></span> method with the <span><a href="http://msdn.microsoft.com/en-us/library/system.object.referenceequals(v=vs.110).aspx">ReferenceEquals</a></span> method to determine whether one numeric value is the same type as two other numeric values.</p><div>
+<div id="code-snippet-2" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-2">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fa2976bb-580f-4e4c-8a27-cb1e57a1ad7a');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_fa2976bb-580f-4e4c-8a27-cb1e57a1ad7a" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">int</span> n1 = 12;
+<span style="color:Blue;">int</span> n2 = 82;
+<span style="color:Blue;">long</span> n3 = 12;
+
+Console.WriteLine(<span style="color:#A31515;">"n1 and n2 are the same type: {0}"</span>,
+                  Object.ReferenceEquals(n1.GetType(), n2.GetType()));
+Console.WriteLine(<span style="color:#A31515;">"n1 and n3 are the same type: {0}"</span>,
+                  Object.ReferenceEquals(n1.GetType(), n3.GetType()));
+<span style="color:Green;">// The example displays the following output:&nbsp;</span>
+<span style="color:Green;">//       n1 and n2 are the same type: True&nbsp;</span>
+<span style="color:Green;">//       n1 and n3 are the same type: False      </span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div><div class="alert"><table><tbody><tr><th align="left"><img id="alert_note" alt="Note" src="http://i.msdn.microsoft.com/en-us/library/system.object.gettype.alert_note(v=vs.110).gif?cs-save-lang=1&amp;cs-lang=csharp" title="Note" xmlns=""><strong>Note</strong></th></tr><tr><td><p>To determine whether an object is a specific type, you can use your language's type comparison keyword or construct. For example, you can use the <span><span class="input">TypeOf…Is</span></span> construct in Visual Basic or the <span><span class="input">is</span></span> keyword in C#.</p></td></tr></tbody></table></div><p>The <span><a href="http://msdn.microsoft.com/en-us/library/system.type(v=vs.110).aspx">Type</a></span> object exposes the metadata associated with the class of the current <span><a href="http://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx">Object</a></span>.</p></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" role="button" title="Click to expand. Double-click to expand all."><span class="cl_CollapsibleArea_collapsing LW_CollapsibleArea_Img" title="Click to expand. Double-click to expand all."></span><span class="LW_CollapsibleArea_Title">Examples</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionnone"><a id="exampleToggle"></a><p>The following code example demonstrates that <span><span class="selflink">GetType</span></span> returns the runtime type of the current instance.</p><div>
+<div id="code-snippet-3" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=cpp#code-snippet-3">C++</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-3">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e17a86b0-7282-4f93-b29e-47712ff0e9ce');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_e17a86b0-7282-4f93-b29e-47712ff0e9ce" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Blue;">public</span>&nbsp;<span style="color:Blue;">class</span> MyBaseClass {
+}
+
+<span style="color:Blue;">public</span>&nbsp;<span style="color:Blue;">class</span> MyDerivedClass: MyBaseClass {
+}
+
+<span style="color:Blue;">public</span>&nbsp;<span style="color:Blue;">class</span> Test 
+{
+   <span style="color:Blue;">public</span>&nbsp;<span style="color:Blue;">static</span>&nbsp;<span style="color:Blue;">void</span> Main() 
+   {
+      MyBaseClass myBase = <span style="color:Blue;">new</span> MyBaseClass();
+      MyDerivedClass myDerived = <span style="color:Blue;">new</span> MyDerivedClass();
+      <span style="color:Blue;">object</span> o = myDerived;
+      MyBaseClass b = myDerived;
+
+      Console.WriteLine(<span style="color:#A31515;">"mybase: Type is {0}"</span>, myBase.GetType());
+      Console.WriteLine(<span style="color:#A31515;">"myDerived: Type is {0}"</span>, myDerived.GetType());
+      Console.WriteLine(<span style="color:#A31515;">"object o = myDerived: Type is {0}"</span>, o.GetType());
+      Console.WriteLine(<span style="color:#A31515;">"MyBaseClass b = myDerived: Type is {0}"</span>, b.GetType());
+   }
+}
+<span style="color:Green;">// The example displays the following output:&nbsp;</span>
+<span style="color:Green;">//    mybase: Type is MyBaseClass&nbsp;</span>
+<span style="color:Green;">//    myDerived: Type is MyDerivedClass&nbsp;</span>
+<span style="color:Green;">//    object o = myDerived: Type is MyDerivedClass&nbsp;</span>
+<span style="color:Green;">//    MyBaseClass b = myDerived: Type is MyDerivedClass </span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Version Information</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><a id="versionsTitleToggle"></a><h4 class="subHeading">.NET Framework</h4>Supported in: 4.6, 4.5, 4, 3.5, 3.0, 2.0, 1.1, 1.0<br><h4 class="subHeading">.NET Framework Client Profile</h4>Supported in: 4, 3.5 SP1<br><h4 class="subHeading">Portable Class Library</h4>Supported in: Portable Class Library<br><h4 class="subHeading">.NET for Windows Store apps</h4>Supported in: Windows 8<br><h4 class="subHeading"></h4>Supported in: Windows Phone 8.1<br><h4 class="subHeading"></h4>Supported in: Windows Phone Silverlight 8.1<br><h4 class="subHeading"></h4>Supported in: Windows Phone Silverlight 8<br></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Platforms</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><a id="platformsTitleToggle"></a><p>Windows Phone 8.1, Windows Phone 8, Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows 7, Windows Vista SP2, Windows Server 2008 (Server Core Role not supported), Windows Server 2008 R2 (Server Core Role supported with SP1 or later; Itanium not supported)</p><p>  <span>
+		  The .NET Framework does not support all versions of every platform. For a list of the supported versions, see <a href="http://msdn.microsoft.com/en-us/library/8z6watww(v=vs.110).aspx">.NET Framework System Requirements</a>.
+	  </span> </p></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">See Also</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><a id="seeAlsoToggle"></a><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx">Object Class</a></div><div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/en-us/library/system(v=vs.110).aspx">System Namespace</a></div><div class="seeAlsoStyle"><span><a href="http://msdn.microsoft.com/en-us/library/system.type(v=vs.110).aspx">Type</a></span></div></div></div></div>
     </div>
   </div>
 </div>
@@ -629,8 +644,8 @@ $(document).ready(function() {
 
             
     
-<input name="__RequestVerificationToken" type="hidden" value="UXBsL0-PMjLvQoZxuJDUsBlc1egWZBhyfJy2gnXTpVKZP4lVIXyVNEgiF5XF-T_gL8sROsvelUMXyWqCnM6VE0Ocpb41">
-<input id="ratingSubmitUrl" type="hidden" value="http://msdn.microsoft.com/en-us/library/feedback/add/w0x726c2(v=vs.110).aspx">
+<input name="__RequestVerificationToken" type="hidden" value="aGsQxT4MUBXEcgRNSaQpZK2agoE1GLMqQD5Kl9PqQhRzemHGIIddpJp1kuL_zMmUhEiPPj0LRVvPaUXZSwWXR8Mbcfk1">
+<input id="ratingSubmitUrl" type="hidden" value="http://msdn.microsoft.com/en-us/library/feedback/add/system.object.gettype(v=vs.110).aspx">
 <input id="isTopicRated" type="hidden" value="false">
 
 
@@ -802,7 +817,7 @@ $(document).ready(function() {
             <span class="localeContainer">
                 
     <form class="selectLocale" id="selectLocaleForm" action="http://msdn.microsoft.com/en-us/selectlocale-dmc">
-        <input type="hidden" name="fromPage" value="http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fw0x726c2(v%3dvs.110).aspx">
+        <input type="hidden" name="fromPage" value="http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fsystem.object.gettype(v%3dvs.110).aspx%3fcs-save-lang%3d1%26cs-lang%3dcsharp">
         <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
     </form>
 
@@ -830,7 +845,7 @@ $(document).ready(function() {
 </div>    
             <span class="logoLegal">
                 <span class="logo"></span>
-                <span class="copyright">© 2014 Microsoft</span>
+                <span class="copyright">© 2015 Microsoft</span>
             </span>
         </footer>
     </div>
@@ -838,7 +853,7 @@ $(document).ready(function() {
 
 
             <div class="footerPrintView">
-                <div class="footerCopyrightPrintView">© 2014 Microsoft</div>
+                <div class="footerCopyrightPrintView">© 2015 Microsoft</div>
             </div>
 
             
@@ -886,7 +901,7 @@ $(document).ready(function() {
 
 
 <div id="globalRequestVerification">
-    <input name="__RequestVerificationToken" type="hidden" value="8V50dtcd9OIJ2OmaZURHZrP_alG2tU1EwMRJQPYGJXLMm6iJonqBaX8tAzGc3X0IsdbgAO-eRAhxiYcDJ76Bek1UfRQ1">
+    <input name="__RequestVerificationToken" type="hidden" value="F3CbtJzlfklFi0n_3r1yX6DdXU9qtYHjkduEeUfwoT4zwx_qvxn-e1FjU_HfVGDpxVi12Dyb6aV6DP0149gQXJXsTx41">
 </div>
 
 
@@ -902,8 +917,8 @@ $(document).ready(function() {
 MTPS.injectScripts([
 	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"http://i.msdn.microsoft.com\", \r\n\t\"js\": \"http://i2.msdn.microsoft.com\", \r\n\t\"css\": \"http://i3.msdn.microsoft.com\", \r\n\t\"xap\": \"http://msdn.microsoft.com\"\r\n});\r\n/**/" },
 	{ url: "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" },
-	{ txt: "//\n  var literalNormalizedUrl = \u0027/en-us/library/w0x726c2(l=en-us,v=vs.110).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027en-us\u0027;\n  var wtsp = \u0027msdnlib_dotnet\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
-	{ txt: "/**/\n  var omni_guid = \"c83f39db-ea52-4a00-b436-ae767e6bf611\";\n/**/" },
+	{ txt: "//\n  var literalNormalizedUrl = \u0027/en-us/library/dfwy45w9(l=en-us,v=vs.110).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027en-us\u0027;\n  var wtsp = \u0027msdnlib_dotnet\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
+	{ txt: "/**/\n  var omni_guid = \"a615737e-3472-4633-9e1d-47283e7afe9e\";\n/**/" },
 	{ txt: "//\n\n            window.appInsightsId = \u002760854590-027a-4ae4-98be-2741a40f355f\u0027;\n            //" },
 	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:FeedbackCounterAsync,1:Rating,2:Footer,0:Topic,4:webtrendsscript,5:omni_rsid_MSDN,0:AppInsightsPerf,6:Toc,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content/Webtrends/resources:4,/Areas/Global/Content/Omniture/resources/MSDN:5,/Areas/Library/Content:6\u0026amp;hashKey=20CA3E0E0DB7E856CD9137C92688CC69\u0026amp;v=DED65351FE793D52D793EDE5473E93C6" },
 	{ url: "http://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
@@ -915,4 +930,4 @@ MTPS.injectScripts([
 
 /*]]>*/
 </script>
-<iframe src="chrome-extension://hgimnogjllphhhkhlmebbmlgjoejdpjl/bar.html" id="xh-bar" class="top" style="height: 0px; visibility: hidden;"></iframe><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i; } else { d.textContent=i; } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script><script src="http://js.microsoft.com/library/svy/sto/broker-config.js?1418505662633"></script><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="http://c1.microsoft.com/c.gif?DI=4050&amp;did=1&amp;t=" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i; } else { d.textContent=i; } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script><script src="http://js.microsoft.com/library/svy/sto/broker-config.js?1420198939478"></script><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="http://c1.microsoft.com/c.gif?DI=4050&amp;did=1&amp;t=" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>

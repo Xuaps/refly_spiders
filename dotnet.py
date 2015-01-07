@@ -26,7 +26,7 @@ class DotNetSpider(scrapy.Spider):
       self.filtersname = [
         {'filter': u'//h1[@class="title"]', 'extract': u''}]
       self.filterscontent = [
-        {'filter': u'//div[@class="topic"]','extract': u''}
+        {'filter': u'//div[@id="mainBody"]','extract': u''}
         ]
 
     def parse(self, response):
@@ -38,7 +38,7 @@ class DotNetSpider(scrapy.Spider):
         else:
                 reference['alias'] = reference['name']
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop().decode('utf-8')
-        reference['content'] = self.getExistingNode(response,self.filterscontent)
+        reference['content'] = self.removeTabs(response,self.getExistingNode(response,self.filterscontent))
         reference['path'] = [p for p in response.xpath('//div[@id="tocnav"]/div[@data-toclevel<1]/a/text()').extract() if p not in self.excluded_path]
         yield reference
 
@@ -89,20 +89,13 @@ class DotNetSpider(scrapy.Spider):
             return response.xpath(criteria).extract()[0]
         return u''
 
+    def removeTabs(self,response,content):
+        for tabs in response.xpath('//div[@class="codeSnippetContainerTabs"]').extract():
+            content = content.replace(tabs, '')
+        return content
+
     def unescape(self,htmltext):
         htmltext = htmltext.replace(u'&lt;', u'<')
         htmltext = htmltext.replace(u'&gt;', u'>')
         htmltext = htmltext.replace(u'&amp;', u'and')
         return htmltext.strip()
-
-
-    def filterLink(self,response,xpathexp, regexp):
-         hrefs = response.xpath(xpathexp).extract()
-         regex = re.compile(regexp)
-         newhrefs = []
-         for a in hrefs:
-             if regex.match(a):
-                 a.split('?')[:-1]
-                 if a not in newhrefs:
-                     newhrefs.append(a)
-         return newhrefs
