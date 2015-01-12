@@ -52,22 +52,19 @@ class JsSpider(scrapy.Spider):
 
     def getSlashUrl(self,path, name):
         if name!='':
-            return '/'+('/'.join(path)+'/'+name).lower().replace(' ', '_')
+            return u'/'+('/'.join(path)+'/'+name).lower().replace(u' ', u'_').replace('[', '.').replace(']', '')
         else:
             if len(path)>1:
-                return '/'+('/'.join(path)).lower().replace(' ', '_')
+                return u'/'+('/'.join(path)).lower().replace(u' ', u'_').replace('[', '.').replace(']', '')
             else:
                 return None
 
     def TransformLinks(self,content,response):
-        validlink = re.compile(u'^\/en-US\/docs\/Web\/JavaScript\/Reference((?!\\$|#).)*')
+        validlink = re.compile(u'(\/en-US\/docs\/Web\/JavaScript\/Reference.*)')
         links = response.xpath('//a/@href').extract()
         for link in links:
-            #print link +'\n'
             if validlink.match(link) is None:
-                #print link +'\n'
                 if urlparse.urlparse(link).scheme=='':
                     content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link)+ '"',1)           
-            
-        content = re.sub(r'"(.*)#(.*)"', r'"\1"', content)
+
         return content
