@@ -118,9 +118,9 @@ class PhpSpider(scrapy.Spider):
         path = [item.replace('/','-') for item in path]
         if name!='':
           if len(path)>0:
-            return (u'/php/'+('/'.join(path)+'/'+name.replace('/', '-'))).replace('"','').replace("'","").replace(' ', '_').lower()
+            return (u'/php/'+('/'.join(path)+'/'+name.replace('\\', '-'))).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
-            return u'/php/' + name.replace('/', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
+            return u'/php/' + name.replace('\\', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
         else:
           if len(path)>0:
             return (u'/php/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()

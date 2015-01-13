@@ -61,10 +61,6 @@ class JsSpider(scrapy.Spider):
 
     def TransformLinks(self,content,response):
         validlink = re.compile(u'(\/en-US\/docs\/Web\/JavaScript\/Reference.*)')
-        links = response.xpath('//a/@href').extract()
-        for link in links:
-            if validlink.match(link) is None:
-                if urlparse.urlparse(link).scheme=='':
-                    content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link)+ '"',1)           
-
+        for match in re.findall(self.regex,content):
+            content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link)+ '"',1)
         return content
