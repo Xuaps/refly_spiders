@@ -62,7 +62,7 @@ class PhpSpider(scrapy.Spider):
           reference['alias'] = reference['name']
         reference['type'] = u''
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop()
-        reference['content'] = self.RemoveTitle(self.getExistingNode(response,self.filterscontent),reference['name'])
+        reference['content'] = self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,self.filterscontent),reference['name']),response)
         reference['path'] = [p for p in response.xpath('//*[@id="breadcrumbs-inner"]//li/a/text()').extract() if p not in self.excluded_path]
 
         yield reference
@@ -143,4 +143,16 @@ class PhpSpider(scrapy.Spider):
     def RemoveTitle(self,content,title):
         content = re.sub(r'<([\w]+)[^>]*>' + title + '<\/\1>', r'', content)
         return content
+
+    def MarkSourceCode(self, content, response):
+        snipets = response.xpath('//div[@class="methodsynopsis dc-description"]').extract()
+        for snipet in snipets:
+            content = content.replace(snipet, '<code>' + self.remove_tags(snipet) + '</code>')
+
+        return content
+
+
+    def remove_tags(self,text):
+        html_re = re.compile(r'<[^>]+>')
+        return html_re.sub('', text)
 

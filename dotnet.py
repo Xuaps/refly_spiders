@@ -65,8 +65,12 @@ class DotNetSpider(CrawlSpider):
           return 'others'
         elif strtype == 'Methods' or strtype=='Method':
           return 'method'
+        elif strtype == 'Property':
+          return 'property'
+        elif strtype == 'NameSpaces':
+          return 'namespace'
         else:
-          return strtype.lower()
+          return 'class'
 
     def getSlashUrl(self,path, name):
         if name!='':
