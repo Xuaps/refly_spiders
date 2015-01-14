@@ -1,0 +1,1288 @@
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta name="WT.seg_1" content="en-us"><link rel="canonical" href="http://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx">
+        <title>.NET Framework Class Library ()</title>
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/gg145045(d=default,l=en-us,v=vs.110).aspx">
+
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/gg145045(d=default,l=en-us,v=vs.110).aspx">
+
+<meta name="ms.normalizedurl" content="http://msdn.microsoft.com/en-us/library/gg145045(d=default,l=en-us,v=vs.110).aspx">
+
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/gg145045(d=default,l=en-us,v=vs.110).aspx">
+
+<meta name="MN" content="FB361391-3:39:42 PM">
+
+<meta name="Search.ShortId" content="gg145045">
+
+<meta name="ms.shortidmsdn" content="gg145045">
+
+<meta name="Ms.Locale" content="en-us">
+
+<meta name="ms.prodver" content="VS.110">
+
+<meta name="ms.contentlang" content="EN">
+
+<meta name="ms.lang" content="EN">
+
+<meta name="ms.loc" content="US">
+
+<meta name="ms.sitever" content="2014.12.04.2">
+
+<meta name="ms.assetid" content="e18143ab-e34f-496a-9092-14147075f668">
+
+<meta name="ms.auth" content="0">
+
+
+
+
+
+
+
+
+        
+    <link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Combined.css?resources=0:Topic,0:CodeSnippet,0:ProgrammingSelector,0:ExpandableCollapsibleArea,1:CommunityContent,0:TopicNotInScope,0:FeedViewerBasic,0:ImageSprite,2:Header,2:HeaderFooterSprite,3:LinkList,4:PrintExportButton,1:Toc,1:NavigationResize,0:VersionSelector,1:LibraryMemberFilter,2:Footer,3:FooterSock,3:Base,5:Msdn;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Themes/Base/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Library/Themes/Msdn/Content:5&amp;amp;v=9A1635FC1A9DD8B12A88C49550CC1734"><script type="text/javascript" async="" src="http://i2.msdn.microsoft.com/Areas/Global/Content/Omniture/resources/ms2.js"></script><script type="text/javascript" src="//az416426.vo.msecnd.net/scripts/ai.js" async=""></script><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "http://i.msdn.microsoft.com", 
+	"js": "http://i2.msdn.microsoft.com", 
+	"css": "http://i3.msdn.microsoft.com", 
+	"xap": "http://msdn.microsoft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script><script class="mtps-injected">try {
+//
+  var literalNormalizedUrl = '/en-us/library/gg145045(l=en-us,v=vs.110).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+
+
+
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+
+
+
+  var detectedLocale = 'en-us';
+  var wtsp = 'msdnlib_dotnet';
+  var gTrackEvents = '0';
+/**/
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script class="mtps-injected">try {
+/**/
+  var omni_guid = "38519c78-5be4-4ae0-b775-608180e91bfb";
+/**/
+} finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script class="mtps-injected">try {
+//
+
+            window.appInsightsId = '60854590-027a-4ae4-98be-2741a40f355f';
+            //
+} finally { MTPS._injectNextScript_4 && MTPS._injectNextScript_4(); }</script><script class="mtps-injected" src="http://i2.msdn.microsoft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:FeedbackCounterAsync,1:Rating,2:Footer,0:Topic,4:webtrendsscript,5:omni_rsid_MSDN,0:AppInsightsPerf,6:Toc,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content/Webtrends/resources:4,/Areas/Global/Content/Omniture/resources/MSDN:5,/Areas/Library/Content:6&amp;amp;hashKey=20CA3E0E0DB7E856CD9137C92688CC69&amp;amp;v=DED65351FE793D52D793EDE5473E93C6"></script><script class="mtps-injected" src="http://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox&amp;btnid=HeaderSearchButton&amp;brand=Msdn&amp;loc=en-us&amp;focusOnInit=false&amp;emptyWatermark=true&amp;searchButtonTooltip=Search MSDN"></script><script class="mtps-injected" src="http://i2.msdn.microsoft.com/Combined.js?resources=0:PrintExportButton,1:NavigationResize;/Areas/Library/Themes/Base/Content:0,/Areas/Library/Content:1&amp;amp;hashKey=72684789A0F98A77C33C1AC3470E9ECF&amp;amp;v=DED65351FE793D52D793EDE5473E93C6"></script><script class="mtps-injected">try {
+MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = 'Expand'; MTPS.LocalizedStrings.CollapseButtonTooltip = 'Collapse'; MTPS.LocalizedStrings.EnhancedExpandTooltip = 'Click to expand. Double-click to expand all.'; MTPS.LocalizedStrings.EnhancedCollapseTooltip = 'Click to collapse. Double-click to collapse all.'; MTPS.LocalizedStrings.ExpandAllButtonTooltip = 'Expand All'; MTPS.LocalizedStrings.CollapseAllButtonTooltip = 'Collapse All';
+} finally { MTPS._injectNextScript_8 && MTPS._injectNextScript_8(); }</script><script class="mtps-injected" src="http://i2.msdn.microsoft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:CollapsibleArea,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1&amp;amp;hashKey=BA0D41FD888DE12A388DAF9CAC70144D&amp;amp;v=DED65351FE793D52D793EDE5473E93C6"></script><script src="//js.microsoft.com/library/svy/sto/broker.js"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_10 && MTPS._injectNextScript_10(); }</script><link href="/Areas/Epx/Content/Css/PrintView.css" rel="stylesheet" type="text/css" media="print"></head>
+    <body class="library Chrome">
+        <div id="page">
+            
+
+            
+            
+            
+    
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+    <input type="hidden" id="isHeaderBleeding" value="true">
+    <div id="ux-header" dir="ltr" class="ltr msdn">
+        
+
+        <header>
+            <div class="row">
+                <div class="top mobile"></div>
+                <div class="left">
+                    <div class="siteLogo">  
+                        
+                            <a class="msdnLogoImg" href="http://msdn.microsoft.com/en-us">
+                               <img src="http://i.msdn.microsoft.com/Areas/Centers/Themes/StandardDevCenter/Content/Images/microsoftLogoForHeader.png?v=635533092451513461">
+                            </a>
+                                                             
+                        <div data-fragmentname="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="LinkWithImage topImage">
+    <a id="SiteLogo_2152_1" href="http://msdn.microsoft.com">
+      <img id="msdnLogo-black" src="http://i.msdn.microsoft.com/en-us/msdn/ux/library/dn610975.msdnLogo-black.jpg?Segments=%2flibrary&amp;isLibrary=true&amp;isMtpsRequest=true&amp;HideProfileLink=true" xmlns="">
+      <span></span>
+    </a>
+  </div>
+</div>    
+
+                    </div>
+                    <a id="grip" href="javascript:void(0)"></a>
+                </div>
+                
+                <div class="right desktop">
+                    <div class="auxNav">
+                        <div id="signIn">
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1421105982&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=MSDN%24MSDN%24MSDN&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fgg145045%2528v%3dvs.110%2529.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in">Sign in</a></div>
+
+    
+
+                        <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>   
+                        <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                        <div data-fragmentname="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="http://www.facebook.com/microsoftdeveloper" target="_blank" id="SocialLinks_2152_4" class="facebook" xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/msdev" target="_blank" id="SocialLinks_2152_5" class="twitter" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</a>
+      </li>
+      <li>
+        <a href="http://plus.google.com/111221966647232053570/" target="_blank" id="SocialLinks_2152_6" class="googlePlus" xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</a>
+      </li>
+    </ul>
+  </div>
+</div> 
+                    </div>
+                    <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this);">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" autocomplete="off">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button" title="Search MSDN"></button>
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; color: rgb(59, 59, 59); font-family: Arial; font-size: 13px; background-color: rgb(255, 255, 255);"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    
+    
+  </div>
+</div> 
+                </div>
+            </div>
+       
+             <div class="row" id="droor" style="display: block;">
+                <div class="left toc">
+                    
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Technologies">Technologies</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/cloud-app-development-msdn" title="Cloud">Cloud</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/mobile-app-development-msdn" title="Mobile">Mobile</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/web-app-development-msdn" title="Web">Web</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/business-and-productivity-app-development-msdn" title="Business">Business</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/big-data-development-msdn" title="Data">Data</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/games-development-msdn" title="Gaming">Gaming</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Downloads">Downloads</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="http://www.visualstudio.com/products/visual-studio-community-vs" title="Visual Studio">Visual Studio</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/subscriptions/" title="MSDN subscriptions">MSDN subscriptions</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/microsoft-sdks-msdn" title="SDKs">SDKs</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Programs">Programs</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="http://www.microsoft.com/bizspark" title="BizSpark">BizSpark</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Students">Students</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="http://msdn.microsoft.com/students-develop-msdn" title="Develop apps">Develop apps</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://blogs.msdn.com/b/microsoft_student_developer_blog" title="Blog">Blog</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Architects">Architects</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="http://msdn.microsoft.com/architects-overview-msdn" title="Overview">Overview</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://msdn.microsoft.com/architects-case-studies-msdn" title="Case studies">Case studies</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://msdn.microsoft.com/architects-blueprints-msdn" title="Blueprints">Blueprints</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://blogs.msdn.com/b/msarchitecture/" title="Blog">Blog</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://social.msdn.microsoft.com/forums/en-us/home?brandignore=true&amp;sort=relevancedesc&amp;searchterm=architecture+or+architect" title="Forums">Forums</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://events.msdn.microsoft.com/" title="Events">Events</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Community">Community</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="https://social.msdn.microsoft.com/forums/" title="Forums">Forums</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://blogs.msdn.com/b/developer-tools/" title="Blogs">Blogs</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://channel9.msdn.com/" title="Channel 9">Channel 9</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive current toggle">
+                            <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive current">
+                                            <a href="http://msdn.microsoft.com/library/" title="APIs and reference">APIs and reference</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://msdn.microsoft.com/developer-centers-msdn" title="Dev centers">Dev centers</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive">
+                            <a href="https://code.msdn.microsoft.com/" title="Samples">Samples</a>
+                        </li>
+            </ul>
+        </nav>
+                
+                </div>
+                <div class="right mobile"></div>
+                
+                <span id="singleCol"></span>
+                <span id="doubleCol"></span>
+             </div>
+        </header>
+    </div>
+    
+    
+
+        
+    <div class="printExportMenus ltr">
+        <a id="isd_printABook" href="/en-us/library/export/help/?returnUrl=%2fen-us%2flibrary%2fgg145045(v%3dvs.110).aspx" style="display: inline;">
+            Export (<span class="count">1</span>)
+        </a>
+        <a id="isd_print" href="http://msdn.microsoft.com/en-us/library/gg145045(d=printer,v=vs.110).aspx" rel="nofollow">
+            Print 
+        </a>
+    </div>
+    
+
+        <div class="printExportMenus ltr">
+        <a id="expandCollapseAll" accesskey="e" href="javascript:void(0)" title="Expand/Collapse all sections by pressing Ctrl + Shift + e">Collapse All</a>
+    </div>
+
+    
+
+
+            <div id="body">
+                
+
+
+
+
+
+
+
+
+    <div id="leftNav" style="width: 369px; max-width: 480px; min-height: 3072px; height: auto;">
+
+
+
+<div id="tocnav" style="">
+
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="5DDC0A78-6B2C-43E3-9C56-55F45C0DFFA5_MSDN.10_en-us" mtpsshortid="ms123401_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/ff361664(v=vs.110).aspx" id="aa139615_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="43e22490-fb00-409c-8301-585a03034ae2_MSDN.10_en-us" mtpsshortid="ff361664_VS.110_en-us" title=".NET Development">.NET Development</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/w0x726c2(v=vs.110).aspx" id="aa139616_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="f61f02f2-2f20-483d-8f56-a9c8f3a54986_MSDN.10_en-us" mtpsshortid="w0x726c2_VS.110_en-us" title=".NET Framework 4.5 and 4.6 Preview">.NET Framework 4.5 and 4.6 Preview</a>            </div>
+            <div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
+<a class="toc_expanded" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145045(v=vs.110).aspx" id="hh795167_VS.110_en-us" mtpsaliasid="" mtpsassetid="e18143ab-e34f-496a-9092-14147075f668_VS.110_en-us" mtpsshortid="gg145045_VS.110_en-us" title=".NET Framework Class Library">.NET Framework Class Library</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system(v=vs.110).aspx" id="ff374711_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System">System</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145022(v=vs.110).aspx" id="hh795481_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Activities Namespaces">System.Activities Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145020(v=vs.110).aspx" id="hh795230_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.AddIn Namespaces">System.AddIn Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145034(v=vs.110).aspx" id="hh795398_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.CodeDom Namespaces">System.CodeDom Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145035(v=vs.110).aspx" id="hh798007_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Collections Namespaces">System.Collections Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145042(v=vs.110).aspx" id="hh799811_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.ComponentModel Namespaces">System.ComponentModel Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145027(v=vs.110).aspx" id="hh797230_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Configuration Namespaces">System.Configuration Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145028(v=vs.110).aspx" id="hh796711_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Data Namespaces">System.Data Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145029(v=vs.110).aspx" id="hh795744_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Deployment Namespaces">System.Deployment Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.device.location(v=vs.110).aspx" id="hh794280_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Device.Location">System.Device.Location</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145030(v=vs.110).aspx" id="hh798446_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Diagnostics Namespaces">System.Diagnostics Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145037(v=vs.110).aspx" id="hh798481_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.DirectoryServices Namespaces">System.DirectoryServices Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145023(v=vs.110).aspx" id="hh799059_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Drawing Namespaces">System.Drawing Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.dynamic(v=vs.110).aspx" id="hh797968_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Dynamic">System.Dynamic</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145047(v=vs.110).aspx" id="hh797718_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.EnterpriseServices Namespaces">System.EnterpriseServices Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.globalization(v=vs.110).aspx" id="hh621091_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Globalization">System.Globalization</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145031(v=vs.110).aspx" id="hh800581_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.IdentityModel Namespaces">System.IdentityModel Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145019(v=vs.110).aspx" id="hh798857_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.IO Namespaces">System.IO Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145016(v=vs.110).aspx" id="hh799566_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Linq Namespaces">System.Linq Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145024(v=vs.110).aspx" id="hh794397_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Management Namespaces">System.Management Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.media(v=vs.110).aspx" id="hh608687_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Media">System.Media</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145046(v=vs.110).aspx" id="hh797395_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Messaging Namespaces">System.Messaging Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145039(v=vs.110).aspx" id="hh794019_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Net Namespaces">System.Net Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.numerics(v=vs.110).aspx" id="hh800640_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Numerics">System.Numerics</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145044(v=vs.110).aspx" id="hh797051_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Printing Namespaces">System.Printing Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145033(v=vs.110).aspx" id="hh797502_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Reflection Namespaces">System.Reflection Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145043(v=vs.110).aspx" id="hh800781_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Resources Namespaces">System.Resources Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145017(v=vs.110).aspx" id="hh795653_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Runtime Namespaces">System.Runtime Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145017(v=vs.110).aspx" id="hh795653_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Runtime Namespaces">System.Runtime Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145025(v=vs.110).aspx" id="hh799189_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Security Namespaces">System.Security Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145010(v=vs.110).aspx" id="hh800217_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.ServiceModel Namespaces">System.ServiceModel Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145038(v=vs.110).aspx" id="hh794070_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.ServiceProcess Namespaces">System.ServiceProcess Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145021(v=vs.110).aspx" id="hh795249_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Speech Namespaces">System.Speech Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145012(v=vs.110).aspx" id="hh795594_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Text Namespaces">System.Text Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145014(v=vs.110).aspx" id="hh800821_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Threading Namespaces">System.Threading Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.threading.tasks.dataflow(v=vs.110).aspx" id="hh799819_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Threading.Tasks.Dataflow">System.Threading.Tasks.Dataflow</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/system.timers(v=vs.110).aspx" id="hh612946_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Timers">System.Timers</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145032(v=vs.110).aspx" id="hh800940_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Transactions Namespaces">System.Transactions Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145018(v=vs.110).aspx" id="hh800295_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Web Namespaces">System.Web Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145013(v=vs.110).aspx" id="hh796099_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Windows Namespaces">System.Windows Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145026(v=vs.110).aspx" id="hh798506_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Workflow Namespaces">System.Workflow Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145048(v=vs.110).aspx" id="hh797461_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Xaml Namespaces">System.Xaml Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145036(v=vs.110).aspx" id="hh799067_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System.Xml Namespaces">System.Xml Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/accessibility(v=vs.110).aspx" id="hh616692_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessibility">Accessibility</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/hh135392(v=vs.110).aspx" id="hh800285_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.Activities Namespaces">Microsoft.Activities Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145008(v=vs.110).aspx" id="hh800508_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.Build Namespaces">Microsoft.Build Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145015(v=vs.110).aspx" id="hh797211_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.CSharp Namespaces">Microsoft.CSharp Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145041(v=vs.110).aspx" id="hh797275_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.JScript Namespaces">Microsoft.JScript Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/microsoft.sqlserver.server(v=vs.110).aspx" id="hh595413_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.SqlServer.Server">Microsoft.SqlServer.Server</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145009(v=vs.110).aspx" id="hh798878_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.VisualBasic Namespaces">Microsoft.VisualBasic Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145040(v=vs.110).aspx" id="hh800792_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.VisualC Namespaces">Microsoft.VisualC Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/gg145011(v=vs.110).aspx" id="hh794959_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.Win32 Namespaces">Microsoft.Win32 Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/hh135393(v=vs.110).aspx" id="hh795191_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft.Windows Namespaces">Microsoft.Windows Namespaces</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/uiautomationclientsideproviders(v=vs.110).aspx" id="hh611200_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="UIAutomationClientsideProviders">UIAutomationClientsideProviders</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/windows.foundation(v=vs.110).aspx" id="jj651058_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Windows.Foundation">Windows.Foundation</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/windows.ui(v=vs.110).aspx" id="jj651074_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Windows.UI">Windows.UI</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<a class="toc_collapsed" href="#"></a><a data-tochassubtree="true" href="/en-us/library/xamlgeneratednamespace(v=vs.110).aspx" id="ee758800_VS.110_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="XamlGeneratedNamespace">XamlGeneratedNamespace</a>            </div>
+</div>
+        
+
+        
+
+        
+        
+        <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+        
+
+<a id="NavigationResize" href="javascript:void(0)" style="left: 369px; display: inline-block;">
+    <img class="cl_nav_resize_open" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635533092500576233" title="Expand" alt="Expand">
+    <img class="cl_nav_resize_close" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635533092500576233" title="Minimize" alt="Minimize" style="display: none;">
+</a>
+
+
+
+    </div>
+<div id="content" class="content" style="margin-left: 369px; width: auto;">
+
+
+
+
+
+    
+    <div id="FeedbackCounterUrl" data-url="/en-us/library/feedbackcounterasync/gg145045(v=vs.110).aspx"></div>
+    <div id="FeedbackCounterPlaceHolder"><link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Areas/Epx/Shared/Content/FeedbackCounter.css" xmlns="http://www.w3.org/1999/xhtml">
+    
+    
+
+    
+
+    
+</div>
+
+
+        
+<div xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+    <h1 class="title">.NET Framework Class Library</h1>
+    
+    <div class="lw_vs">
+      <div id="curversion">
+        <strong>
+            .NET Framework 4.5
+        </strong>
+      </div>
+      <div id="versionclick">
+        <div id="vsseperator" class="cl_lw_vs_seperator"></div>
+        <div>
+          <div>
+            <a id="vsLink" href="javascript:;">
+                        Other Versions
+                    </a>
+          </div>
+          <div class="cl_vs_arrow clip10x10">
+            <img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="http://i3.msdn.microsoft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635533092500576233">
+          </div>
+        </div>
+        <ul id="vsPanel">
+          <li>
+            <a href="/en-us/library/gg145045(v=vs.100).aspx">.NET Framework 4</a>
+          </li>
+        </ul>
+      </div>
+    <div id="ratingCounterSeperator" class="cl_lw_vs_seperator" style="display: block;" xmlns="http://www.w3.org/1999/xhtml"></div><div id="ratingCounter" xmlns="http://www.w3.org/1999/xhtml" style="margin: 0px 0px 0px 13px; display: block;">
+        <span id="rcA" class="ratingText">
+            280 out of 379 rated this helpful <span id="rateThisPrefix">- </span><a id="rateThisTopic" href="#feedback" title="Rate this topic">Rate this topic</a>
+            
+        </span>
+    </div></div>
+    <div style="clear:both;"></div>
+    
+    <div></div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <p>
+          
+        </p>
+        <div>
+          <div class="summary">
+            <p>The .NET Framework class library is a library of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which .NET Framework applications, components, and controls are built. The namespaces and namespace categories in the class library are listed in the following table and documented in detail in this reference. The namespaces and categories are listed by usage, with the most frequently used namespaces appearing first.</p>
+          </div>
+        </div>
+        <div>
+          
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Click to collapse. Double-click to collapse all." role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Namespaces</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="namespacesToggle">
+              
+            </a>
+            <table class="members" id="memberList">
+              <tbody><tr>
+                <th class="nameColumn">Namespace</th>
+                <th class="descriptionColumn">Description</th>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system(v=vs.110).aspx">System</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system(v=vs.110).aspx">System</a></span> namespace contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145022(v=vs.110).aspx">System.Activities</a>
+                </td>
+                <td>
+                  <span>The System.Activities namespaces contain all the classes necessary to create and work with activities in Window Workflow Foundation.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145020(v=vs.110).aspx">System.AddIn</a>
+                </td>
+                <td>
+                  <span>The System.AddIn namespaces contain types used to identify, register, activate, and control add-ins, and to allow add-ins to communicate with a host application.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145034(v=vs.110).aspx">System.CodeDom</a>
+                </td>
+                <td>
+                  <span>The System.CodeDom namespaces contain classes that represent the elements of a source code document and that support the generation and compilation of source code in supported programming languages.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145035(v=vs.110).aspx">System.Collections</a>
+                </td>
+                <td>
+                  <span>The System.Collections namespaces contain types that define various standard, specialized, and generic collection objects.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145042(v=vs.110).aspx">System.ComponentModel</a>
+                </td>
+                <td>
+                  <span>The System.ComponentModel namespaces contain types that implement the run-time and design-time behavior of components and controls. Child namespaces support the Managed Extensibility Framework (MEF), provide attribute classes that define metadata for ASP.NET Dynamic Data controls, and contain types that let you define the design-time behavior of components and their user interfaces.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145027(v=vs.110).aspx">System.Configuration</a>
+                </td>
+                <td>
+                  <span>The System.Configuration namespaces contain types for handling configuration data, such as data in machine or application configuration files. Child namespaces contain types that are used to configure an assembly, to write custom installers for components, and to support a pluggable model for adding functionality to, or removing functionality from, both client and server applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145028(v=vs.110).aspx">System.Data</a>
+                </td>
+                <td>
+                  <span>The System.Data namespaces contain classes for accessing and managing data from diverse sources. The top-level namespace and a number of the child namespaces together form the ADO.NET architecture and ADO.NET data providers. For example, providers are available for SQL Server, Oracle, ODBC, and OleDB. Other child namespaces contain classes used by the ADO.NET Entity Data Model (EDM) and by WCF Data Services.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145029(v=vs.110).aspx">System.Deployment</a>
+                </td>
+                <td>
+                  <span>The System.Deployment namespaces contain types that support deployment of ClickOnce applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.device.location(v=vs.110).aspx">System.Device.Location</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.device.location(v=vs.110).aspx">System.Device.Location</a></span> namespace allows application developers to easily access the computer's location by using a single API.  Location information may come from multiple providers, such as GPS, Wi-Fi triangulation, and cell phone tower triangulation. The <span><a href="http://msdn.microsoft.com/en-us/library/system.device.location(v=vs.110).aspx">System.Device.Location</a></span> classes provide a single API to encapsulate the multiple location providers on a computer and support seamless prioritization and transitioning between them. As a result, application developers who use this API do not need to tailor applications to specific hardware configurations. </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145030(v=vs.110).aspx">System.Diagnostics</a>
+                </td>
+                <td>
+                  <span>The System.Diagnostics namespaces contain types that enable you to interact with system processes, event logs, and performance counters. Child namespaces contain types to interact with code analysis tools, to support contracts, to extend design-time support for application monitoring and instrumentation, to log event data using the Event Tracing for Windows (ETW) tracing subsystem, to read to and write from event logs and collect performance data, and to read and write debug symbol information.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145037(v=vs.110).aspx">System.DirectoryServices</a>
+                </td>
+                <td>
+                  <span>The System.DirectoryServices namespaces contain types that provide access to Active Directory from managed code.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145023(v=vs.110).aspx">System.Drawing</a>
+                </td>
+                <td>
+                  <span>The System.Drawing parent namespace contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.dynamic(v=vs.110).aspx">System.Dynamic</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.dynamic(v=vs.110).aspx">System.Dynamic</a></span> namespace provides classes and interfaces that support Dynamic Language Runtime.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145047(v=vs.110).aspx">System.EnterpriseServices</a>
+                </td>
+                <td>
+                  <span>The System.EnterpriseServices namespaces contain types that define the COM+ services architecture, which provides an infrastructure for enterprise applications. A child namespace supports Compensating Resource Manager (CRM), a COM+ service that enables non-transactional objects to be included in Microsoft Distributed Transaction Coordinator (DTC) transactions. Child namespaces are described briefly in the following table and documented in detail in this reference.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.globalization(v=vs.110).aspx">System.Globalization</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.globalization(v=vs.110).aspx">System.Globalization</a></span> namespace contains classes that define culture-related information, including language, country/region, calendars in use, format patterns for dates, currency, and numbers, and sort order for strings. These classes are useful for writing globalized (internationalized) applications. Classes such as <span><a href="http://msdn.microsoft.com/en-us/library/system.globalization.stringinfo(v=vs.110).aspx">StringInfo</a></span> and <span><a href="http://msdn.microsoft.com/en-us/library/system.globalization.textinfo(v=vs.110).aspx">TextInfo</a></span> provide advanced globalization functionalities, including surrogate support and text element processing.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145031(v=vs.110).aspx">System.IdentityModel</a>
+                </td>
+                <td>
+                  <span>The System.IdentityModel namespaces contain types that are used to provide authentication and authorization for .NET applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145019(v=vs.110).aspx">System.IO</a>
+                </td>
+                <td>
+                  <span>The System.IO namespaces contain types that support input and output, including the ability to read and write data to streams either synchronously or asynchronously, to compress data in streams, to create and use isolated stores, to map files to an application's logical address space, to store multiple data objects in a single container, to communicate using anonymous or named pipes, to implement custom logging, and to handle the flow of data to and from serial ports.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145016(v=vs.110).aspx">System.Linq</a>
+                </td>
+                <td>
+                  <span>The System.Linq namespaces contain types that support queries that use Language-Integrated Query (LINQ). This includes types that represent queries as objects in expression trees.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145024(v=vs.110).aspx">System.Management</a>
+                </td>
+                <td>
+                  <span>The System.Management namespaces contain types that provide access to management information and management events about the system, devices, and applications instrumented to the Windows Management Instrumentation (WMI) infrastructure. These namespaces also contain types necessary for instrumenting applications so that they expose their management information and events through WMI to potential customers.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.media(v=vs.110).aspx">System.Media</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.media(v=vs.110).aspx">System.Media</a></span> namespace contains classes for playing sound files and accessing sounds provided by the system.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145046(v=vs.110).aspx">System.Messaging</a>
+                </td>
+                <td>
+                  <span>The System.Messaging namespaces contain types that enable you to connect to, monitor, and administer message queues on the network and to send, receive, or peek messages. A child namespace contains classes that can be used to extend design-time support for messaging classes.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145039(v=vs.110).aspx">System.Net</a>
+                </td>
+                <td>
+                  <span>The System.Net namespaces contain classes that provide a simple programming interface for a number of network protocols, programmatically access and update configuration settings for the System.Net namespaces, define cache policies for web resources, compose and send e-mail, represent Multipurpose Internet Mail Exchange (MIME) headers, access network traffic data and network address information, and access peer-to-peer networking functionality. Additional child namespaces provide a managed implementation of the Windows Sockets (Winsock) interface and provide access to network streams for secure communications between hosts.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.numerics(v=vs.110).aspx">System.Numerics</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.numerics(v=vs.110).aspx">System.Numerics</a></span> namespace contains numeric types that complement the numeric primitives, such as <span><a href="http://msdn.microsoft.com/en-us/library/system.byte(v=vs.110).aspx">Byte</a></span>, <span><a href="http://msdn.microsoft.com/en-us/library/system.double(v=vs.110).aspx">Double</a></span>, and <span><a href="http://msdn.microsoft.com/en-us/library/system.int32(v=vs.110).aspx">Int32</a></span>, that are defined by the .NET Framework.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145044(v=vs.110).aspx">System.Printing</a>
+                </td>
+                <td>
+                  <span>The System.Printing namespaces contain types that support printing, that provide access to the properties of print system objects and enable rapid copying of their property settings to another object of the same type, and that support the interconversion of managed System.PrintTicket objects and unmanaged GDI DEVMODE structures.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145033(v=vs.110).aspx">System.Reflection</a>
+                </td>
+                <td>
+                  <span>The System.Reflection namespaces contain types that provide a managed view of loaded types, methods, and fields, and that can dynamically create and invoke types. A child namespace contains types that enable a compiler or other tool to emit metadata and Microsoft intermediate language (MSIL).</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145043(v=vs.110).aspx">System.Resources</a>
+                </td>
+                <td>
+                  <span>The System.Resources namespaces contain types that enable developers to create, store, and manage an application's culture-specific resources.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145017(v=vs.110).aspx">System.Runtime</a>
+                </td>
+                <td>
+                  <span>The System.Runtime namespaces contain types that support an application's interaction with the common language runtime, and types that enable features such as application data caching, advanced exception handling, application activation within application domains, COM interop, distributed applications, serialization and deserialization, and versioning. Additional namespaces enable compiler writers to specify attributes that affect the run-time behavior of the common language runtime, define a contract for reliability between a set of code and other code that takes a dependency on it, and implement a persistence provider for Windows Communication Foundation (WCF).</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145025(v=vs.110).aspx">System.Security</a>
+                </td>
+                <td>
+                  <span>The System.Security namespaces contain classes that represent the .NET Framework security system and permissions. Child namespaces provide types that control access to and audit securable objects, allow authentication, provide crytographic services, control access to operations and resources based on policy, and support rights management of application-created content.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145010(v=vs.110).aspx">System.ServiceModel</a>
+                </td>
+                <td>
+                  <span>The System.ServiceModel namespaces contain the types necessary to build Windows Communication Foundation (WCF) service and client applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145038(v=vs.110).aspx">System.ServiceProcess</a>
+                </td>
+                <td>
+                  <span>The System.ServiceProcess namespaces contain types that enable you to implement, install, and control Windows service applications and extend design-time support for Windows service applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145021(v=vs.110).aspx">System.Speech</a>
+                </td>
+                <td>
+                  <span>The System.Speech namespaces contain types that support speech recognition.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145012(v=vs.110).aspx">System.Text</a>
+                </td>
+                <td>
+                  <span>The System.Text namespaces contain types for character encoding and string manipulation. A child namespace enables you to process text using regular expressions.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145014(v=vs.110).aspx">System.Threading</a>
+                </td>
+                <td>
+                  <span>The System.Threading namespaces contain types that enable multithreaded programming. A child namespace provides types that simplify the work of writing concurrent and asynchronous code.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.dataflow(v=vs.110).aspx">System.Threading.Tasks.Dataflow</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.threading.tasks.dataflow(v=vs.110).aspx">System.Threading.Tasks.Dataflow</a></span> namespace provides an actor-based programming model that supports in-process message passing for coarse-grained dataflow and pipelining tasks.For more information, see <span><a href="http://msdn.microsoft.com/en-us/library/hh228603(v=vs.110).aspx">Dataflow (Task Parallel Library)</a></span>.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/system.timers(v=vs.110).aspx">System.Timers</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/system.timers(v=vs.110).aspx">System.Timers</a></span> namespace provides the <span><a href="http://msdn.microsoft.com/en-us/library/system.timers.timer(v=vs.110).aspx">Timer</a></span> component, which allows you to raise an event on a specified interval.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145032(v=vs.110).aspx">System.Transactions</a>
+                </td>
+                <td>
+                  <span>The System.Transactions namespaces contain types that support transactions with multiple, distributed participants, multiple phase notifications, and durable enlistments. A child namespace contains types that describe the configuration options used by the System.Transactions types.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145018(v=vs.110).aspx">System.Web</a>
+                </td>
+                <td>
+                  <span>The System.Web namespaces contain types that enable browser/server communication. Child namespaces include types that support ASP.NET forms authentication, application services, data caching on the server, ASP.NET application configuration, dynamic data, HTTP handlers, JSON serialization, incorporating AJAX functionality into ASP.NET, ASP.NET security, and web services.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145013(v=vs.110).aspx">System.Windows</a>
+                </td>
+                <td>
+                  <span>The System.Windows namespaces contain types used in Windows Presentation Foundation (WPF) applications, including animation clients, user interface controls, data binding, and type conversion. System.Windows.Forms and its child namespaces are used for developing Windows Forms applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145026(v=vs.110).aspx">System.Workflow</a>
+                </td>
+                <td>
+                  <span>The System.Workflow namespaces contain types used to develop applications that use Windows Workflow Foundation. These types provide design time and run-time support for rules and activities, to configure, control, host, and debug the workflow runtime engine.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145048(v=vs.110).aspx">System.Xaml</a>
+                </td>
+                <td>
+                  <span>The System.Xaml namespaces contain types that support parsing and processing the Extensible Application Markup Language (XAML).</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145036(v=vs.110).aspx">System.Xml</a>
+                </td>
+                <td>
+                  <span>The System.Xml namespaces contain types for processing XML. Child namespaces support serialization of XML documents or streams, XSD schemas, XQuery 1.0 and XPath 2.0, and LINQ to XML, which is an in-memory XML programming interface that enables easy modification of XML documents.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145017(v=vs.110).aspx">System.Runtime</a>
+                </td>
+                <td>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/accessibility(v=vs.110).aspx">Accessibility</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/accessibility(v=vs.110).aspx">Accessibility</a></span> and all of its exposed members are part of a managed wrapper for the Component Object Model (COM) accessibility interface.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/hh135392(v=vs.110).aspx">Microsoft.Activities</a>
+                </td>
+                <td>
+                  <span>The Microsoft.Activities namespaces contain types that support MSBuild and debugger extensions for Windows Workflow Foundation applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145008(v=vs.110).aspx">Microsoft.Build</a>
+                </td>
+                <td>
+                  <span>The Microsoft.Build namespaces contain types that provide programmatic access to, and control of, the MSBuild engine.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145015(v=vs.110).aspx">Microsoft.CSharp</a>
+                </td>
+                <td>
+                  <span>The Microsoft.CSharp namespaces contain types that support compilation and code generation of source code written in the C# language, and types that support interoperation betwen the dynamic language runtime (DLR) and C#.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145041(v=vs.110).aspx">Microsoft.JScript</a>
+                </td>
+                <td>
+                  <span>The Microsoft.JScript namespaces contain classes that support compilation and code generation using the JScript language.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server(v=vs.110).aspx">Microsoft.SqlServer.Server</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server(v=vs.110).aspx">Microsoft.SqlServer.Server</a></span> namespace contains classes, interfaces, and enumerations that are specific to the integration of the Microsoft .NET Framework common language runtime (CLR) into Microsoft SQL Server, and the SQL Server database engine process execution environment.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145009(v=vs.110).aspx">Microsoft.VisualBasic</a>
+                </td>
+                <td>
+                  <span>The Microsoft.VisualBasic namespaces contain classes that support compilation and code generation using the Visual Basic language. Child namespaces contain types that provide services to the Visual Basic compiler and types that include support for the Visual Basic application model, the My namespace, lambda expressions, and code conversion.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145040(v=vs.110).aspx">Microsoft.VisualC</a>
+                </td>
+                <td>
+                  <span>The Microsoft.VisualC namespaces contain types that support the Visual C++ compiler and types that implement the STL/CLR Library and the generic interface to the STL/CLR Library.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/gg145011(v=vs.110).aspx">Microsoft.Win32</a>
+                </td>
+                <td>
+                  <span>The Microsoft.Win32 namespaces provide types that handle events raised by the operating system, that manipulate the system registry, and that represent file and operating system handles.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/hh135393(v=vs.110).aspx">Microsoft.Windows</a>
+                </td>
+                <td>
+                  <span>The Microsoft.Windows namespaces contain types that support themes and preview in Windows Presentation Framework (WPF) applications.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/uiautomationclientsideproviders(v=vs.110).aspx">UIAutomationClientsideProviders</a>
+                </td>
+                <td>
+                  <span>Contains a single type that maps client automation providers.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/windows.foundation.aspx">Windows.Foundation</a>
+				  <a href="http://developer.mozilla.org/en-us/library/xamlgeneratednamespace(v=vs.110).aspx">@@@@@@@@@@@@</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/windows.foundation.aspx">Windows.Foundation</a></span> namespace contains types that support the development of Windows Store apps with the .NET Framework. </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/windows.ui(v=vs.110).aspx">Windows.UI</a>
+                </td>
+                <td>
+                  <span>The <span><a href="http://msdn.microsoft.com/en-us/library/windows.ui(v=vs.110).aspx">Windows.UI</a></span> namespace contains types that support the development of Windows Store apps with the .NET Framework. </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://msdn.microsoft.com/en-us/library/xamlgeneratednamespace(v=vs.110).aspx">XamlGeneratedNamespace</a>
+                </td>
+                <td>
+                  <span>Contains compiler-generated types that are not intended to be used directly from your code. </span>
+                </td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit">Inherited
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected">Protected
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings.">
+
+
+ 
+</div>
+
+
+            </div>
+            <div class="clear"></div>
+
+            
+    
+<input name="__RequestVerificationToken" type="hidden" value="7lEaVYxo2x_guCeoqoc9Bd383sVUlVmqHuqwmj2vyYTFR-6IHpWs7Rshz5JxNXC5-U9GJIPfbsp2m4523gNcjPP72eI1">
+<input id="ratingSubmitUrl" type="hidden" value="http://msdn.microsoft.com/en-us/library/feedback/add/gg145045(v=vs.110).aspx">
+<input id="isTopicRated" type="hidden" value="false">
+
+
+
+
+    
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+    <div id="ux-footer" class="" style="" dir="ltr">
+            
+            <div id="footerSock" class="librarySock both">
+                <div id="footerSockInner">
+                        <a name="feedback"></a>
+
+<div class="rating" style="display: block;">
+    <div id="ratingSection1">
+        <div class="title">
+            Was this page helpful?
+        </div>
+        <div class="description">
+            Your feedback about this content is important.<br>Let us know what you think.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes">Yes</button>
+            <button class="button" id="ratingNo">No</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="">
+    </div>
+    <div id="ratingSection2">
+        <div class="title">
+            Additional feedback?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="counter right">
+            <span id="feedbackTextCounter">1500</span> characters remaining
+        </div>
+        <div class="buttons left">
+            <button class="button" id="ratingSubmit">Submit</button>
+            <button class="button" id="ratingSkipThis">Skip this</button>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Thank you!
+        </div>
+        <div class="description">
+            We appreciate your feedback.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+                    <div class="userVoice">
+    <div class="title">
+        Have a suggestion to improve MSDN Library?
+    </div>
+        <div class="description">
+            Visit our UserVoice Page to submit and vote on ideas!
+        </div>
+    <div class="buttons">
+        <a class="button" id="userVoiceButton" href="http://feedback.msdn.com/forums/257782-msdn-feature-suggestions/category/83975" target="_blank">Make a suggestion</a>
+    </div>
+</div>  
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        <footer class="top">
+            <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Dev centers</div>
+    <ul class="links">
+      <li>
+        <a href="http://dev.windows.com" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://developer.nokia.com/" title="Nokia" id="LeftLinks_2148_15" class="nokia" xmlns="http://www.w3.org/1999/xhtml">Nokia</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/aa937802" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>    
+            <div id="rightLinks">
+                <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Learning resources</div>
+    <ul class="links">
+      <li>
+        <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+      </li>
+      <li>
+        <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+      </li>
+      <li>
+        <a href="http://www.interoperabilitybridges.com/" id="CenterLinks1_2151_6" xmlns="http://www.w3.org/1999/xhtml">Interoperability Bridges</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Community</div>
+    <ul class="links">
+      <li>
+        <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+      </li>
+      <li>
+        <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+      </li>
+      <li>
+        <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Support</div>
+    <ul class="links">
+      <li>
+        <a href="http://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml" class="nth-child-4n">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Programs</div>
+    <ul class="links">
+      <li>
+        <a href="http://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+      </li>
+      <li>
+        <a href="https://www.dreamspark.com/" id="CenterLinks4_2151_14" xmlns="http://www.w3.org/1999/xhtml">DreamSpark</a>
+		
+      </li>
+      <li>
+        <a href="http://www.imaginecup.com" id="CenterLinks4_2151_17" xmlns="http://www.w3.org/1999/xhtml">Imagine Cup</a>
+      </li>
+    </ul>
+  </div>
+</div>                
+            </div>
+        </footer>
+    
+
+    </div>
+    
+
+
+
+        </div>
+
+</body></html>

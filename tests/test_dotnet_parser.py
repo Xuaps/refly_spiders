@@ -11,6 +11,7 @@ class DotNetParserTest(unittest.TestCase):
         test2 = u'./tests/data/dotnet_references.html'
         test3 = u'./tests/data/dotnet_framework4.6.html'
         test4 = u'./tests/data/dotnet_language_selector.html'
+        test5 = u'./tests/data/dotnet_class_library.html'
         url1 = u'gg145045(v=vs.110).aspx'
         url2 = u'gg145045(v=vs.110).aspx'
         url3 = u'w0x726c2(v=vs.110).aspx'
@@ -28,7 +29,7 @@ class DotNetParserTest(unittest.TestCase):
             bodyfile = test4
             url = url4
         elif test == 5:
-            bodyfile = test1
+            bodyfile = test5
             url = url1
 
         response = HtmlResponse(url='http://msdn.microsoft.com/en-us/library/' + url,
@@ -75,12 +76,12 @@ class DotNetParserTest(unittest.TestCase):
         h.inline_links = False
         h.bypass_tables = False
         txt = h.handle(html).replace('`[', '[`')
-        txt = self.RestoreTables(txt)
+        #txt = self.RestoreTables(txt)
 
         return txt
 
     def MarkTables(self,txt):
-        txt = txt.replace('\n','')
+        txt = txt.replace('\\n','')
         td_re = re.compile("<td.*?>(.*?)<\/td>")
         for td in td_re.findall(txt):
             txt = txt.replace(td, '<td>;begin_td;' + td + ';end_td;</td>')
@@ -89,7 +90,7 @@ class DotNetParserTest(unittest.TestCase):
     def RestoreTables(self,txt):
         td_re = re.compile(";begin_td;(.*?);end_td;")
         for td in td_re.findall(txt):
-            td_correct = td.replace('\n', '')
+            td_correct = td.replace('\\n', '')
             txt = txt.replace(td, td_correct)
-        txt = txt.replace(';begin_td;','').replace(';end_td;','')
+        txt = txt.replace(';begin_td;','|').replace(';end_td;','')
         return txt

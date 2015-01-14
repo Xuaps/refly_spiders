@@ -11,7 +11,7 @@ class PhpParserTest(unittest.TestCase):
         result = spider.parse(response)
         
         item = result.next()
-        print '##########' + item['content'].replace('\n','') + '#############'
+        print '##########' + item['content'] + '#############'
         self.assertEqual(item['name'], 'Basic syntax')
         self.assertEqual(item['url'], 'language.basic-syntax.php')
         self.assertIsNotNone(item['content'])

@@ -118,12 +118,12 @@ class PhpSpider(scrapy.Spider):
         path = [item.replace('/','-') for item in path]
         if name!='':
           if len(path)>0:
-            return (u'/php/'+('/'.join(path)+'/'+name.replace('\\', '-'))).replace('"','').replace("'","").replace(' ', '_').lower()
+            return (u'/php/'+('/'.join(path)+'/'+name.replace('/', '-').replace('\\', '-'))).replace('"','').replace("'","").replace(' ', '_').lower()
           else:
-            return u'/php/' + name.replace('\\', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
+            return u'/php/' + name.replace('\\', '-').replace('/', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
         else:
           if len(path)>0:
-            return (u'/php/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()
+            return (u'/php/'+('/'.join(path))).replace('\\', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
           else:
             return None
 
@@ -135,7 +135,7 @@ class PhpSpider(scrapy.Spider):
                 
                 if len(response.xpath(fullcriteria).extract())>0:
                     returnedvalue = response.xpath(fullcriteria).extract()[0]
-                    return returnedvalue.replace(u'\u200b', u'')
+                    return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'')
         else:
             return response.xpath(criteria).extract()[0]
         return u''
