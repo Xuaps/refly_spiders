@@ -3,15 +3,17 @@ from scrapy.http import HtmlResponse
 from refly_scraper.items import ReferenceItem
 from refly_spiders.js import JsSpider
 
+
     
 class JavaScriptParserTest(unittest.TestCase):
     def test_parse(self):
         response = HtmlResponse(url='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference', 
-        	body=open('./tests/data/javascript_json.parse.html').read())
+        	body=open('./tests/data/javascript_StopIteration.html').read())
         spider = JsSpider()
 
         result = spider.parse(response)
         item = result.next()
+
         self.assertEqual(item['name'], 'JSON.parse()')
         self.assertEqual(item['url'], '/en-US/docs/Web/JavaScript/Reference')
         self.assertIsNotNone(item['content'])

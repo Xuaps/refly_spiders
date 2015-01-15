@@ -10,6 +10,7 @@ class JsSpider(scrapy.Spider):
     excluded_path = ['MDN', 'Web technology for developers']
     allowed_domains = ['mozilla.org']
     visited = []
+    regex = u''
     start_urls = (
         'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
     )
@@ -61,6 +62,10 @@ class JsSpider(scrapy.Spider):
 
     def TransformLinks(self,content,response):
         validlink = re.compile(u'(\/en-US\/docs\/Web\/JavaScript\/Reference.*)')
-        for match in re.findall(self.regex,content):
-            content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link)+ '"',1)
+        links = response.xpath('//a/@href').extract()
+        for link in links:
+            if validlink.match(link) is None:
+                if urlparse.urlparse(link).scheme=='':
+                    p=0
+                    content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link) + '"',1)
         return content

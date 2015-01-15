@@ -26,7 +26,7 @@ class PhpSpider(scrapy.Spider):
       self.filtersname = [
         {'filter': u'//div[@class="reference"]//h1[@class="title"]', 'extract': u''},
         {'filter': u'//h1[@class="refname"]','extract': u''},
-		{'filter': u'//h2[@class="title"]/em','extract': u'/text()'},
+		{'filter': u'//h2[@class="title"]','extract': u''},
 		{'filter': u'//div[@class="section"]//h2[@class="title"]','extract': u''},
 		{'filter': u'//div[@class="sect1"]//h2[@class="title"]','extract': u''},
         {'filter': u'//div[@class="reference"]//h1[@class="title"]','extract': u''},
@@ -56,13 +56,14 @@ class PhpSpider(scrapy.Spider):
     def parse(self, response):
         self.__init__()
         reference = ReferenceItem()
-        reference['name'] = re.sub('<[^>]*>', '', self.getExistingNode(response,self.filtersname))
+        fullname =  self.getExistingNode(response,self.filtersname)
+        reference['name'] = self.remove_tags(fullname)
         reference['alias'] = self.getExistingNode(response,self.filtersalias)
         if reference['alias'] == u'':
-          reference['alias'] = reference['name']
+            reference['alias'] = reference['name']
         reference['type'] = u''
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop()
-        reference['content'] = self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,self.filterscontent),reference['name']),response)
+        reference['content'] = self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,self.filterscontent),fullname),response)
         reference['path'] = [p for p in response.xpath('//*[@id="breadcrumbs-inner"]//li/a/text()').extract() if p not in self.excluded_path]
 
         yield reference
@@ -85,13 +86,27 @@ class PhpSpider(scrapy.Spider):
             return 'variable'
         elif re.search(r'^.*language.constants.*$',url)!=None:
             return 'constant'
+        elif re.search(r'^.*appendices.*$',name.lower())!=None:
+            return 'interface'
+        elif re.search(r'^.*migration.*$',name.lower())!=None:
+            return 'guide'
+        elif re.search(r'^faq.*$',name.lower())!=None:
+            return 'guide'
+        elif re.search(r'^.*install.*$',url)!=None:
+            return 'guide'
+        elif re.search(r'^.*basic.*$',url)!=None:
+            return 'guide'
         elif re.search(r'^.*language.expressions.*$',url)!=None:
             return 'guide'
         elif re.search(r'^.*language.operators.*$',url)!=None:
             return 'guide'
         elif re.search(r'^.*control-structures.*$',url)!=None:
-            return 'guide'
-        if re.search(r'^.*function.*$',url)!=None:
+            return 'function'
+        elif re.search(r'^.*funcs.*$',url)!=None:
+            return 'function'
+        elif re.search(r'^cairocontext.*$',url)!=None:
+            return 'function'
+        elif re.search(r'^.*function.*$',url)!=None:
             return 'function'
         elif re.search(r'^.*language.oop5.*$',url)!=None:
             return 'class'
@@ -137,22 +152,21 @@ class PhpSpider(scrapy.Spider):
                     returnedvalue = response.xpath(fullcriteria).extract()[0]
                     return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'')
         else:
-            return response.xpath(criteria).extract()[0]
+                if len(response.xpath(criteria).extract())>0:
+                    return response.xpath(criteria).extract()[0]
         return u''
 
     def RemoveTitle(self,content,title):
-        content = re.sub(r'<([\w]+)[^>]*>' + title + '<\/\1>', r'', content)
-        return content
+        return content.replace(title, '')
 
     def MarkSourceCode(self, content, response):
-        snipets = response.xpath('//div[@class="methodsynopsis dc-description"]').extract()
+        snipetsmethod = response.xpath('//div[@class="methodsynopsis dc-description"]').extract()
+        snipetsclass = response.xpath('//div[@class="classsynopsis"]').extract()
+        snipets = snipetsmethod + snipetsclass
         for snipet in snipets:
-            content = content.replace(snipet, '<code>' + self.remove_tags(snipet) + '</code>')
+            content = content.replace(snipet, '<pre><code>' + self.remove_tags(snipet) + '</code></pre>')
 
         return content
 
-
     def remove_tags(self,text):
-        html_re = re.compile(r'<[^>]+>')
-        return html_re.sub('', text)
-
+        return re.sub('<[^>]*>', '', text)
