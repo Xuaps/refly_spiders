@@ -162,10 +162,10 @@ class PhpSpider(scrapy.Spider):
     def MarkSourceCode(self, content, response):
         snipetsmethod = response.xpath('//div[@class="methodsynopsis dc-description"]').extract()
         snipetsclass = response.xpath('//div[@class="classsynopsis"]').extract()
-        snipets = snipetsmethod + snipetsclass
+        snipetsphpcode = response.xpath('//div[@class="phpcode"]').extract()
+        snipets = snipetsmethod + snipetsclass + snipetsphpcode
         for snipet in snipets:
-            content = content.replace(snipet, '<pre><code>' + self.remove_tags(snipet) + '</code></pre>')
-
+            content = content.replace(snipet, '<pre><code>' + snipet + '</code></pre>')
         return content
 
     def remove_tags(self,text):
