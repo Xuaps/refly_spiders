@@ -35,7 +35,6 @@ class DotNetSpider(CrawlSpider):
     def parse_start_url(self, response):
         return list(self.parse_item(response))
 
-
     def parse_item(self, response):
         self.__init__()
         reference = ReferenceItem()
