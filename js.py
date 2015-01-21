@@ -66,6 +66,5 @@ class JsSpider(scrapy.Spider):
         for link in links:
             if validlink.match(link) is None:
                 if urlparse.urlparse(link).scheme=='':
-                    p=0
                     content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link) + '"',1)
         return content
