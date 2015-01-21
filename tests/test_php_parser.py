@@ -5,16 +5,16 @@ from refly_spiders.php import PhpSpider
 
 class PhpParserTest(unittest.TestCase):
     def test_parse(self):
-        response = HtmlResponse(url='http://php.net/manual/en/language.basic-syntax.php',
-                   body=open('./tests/data/php_removeanchor.html').read())
+        response = HtmlResponse(url='http://php.net/manual/en/faq.php',
+                   body=open('./tests/data/php_faq.html').read())
         spider = PhpSpider()
         result = spider.parse(response)
         
         item = result.next()
-        print '##########' + item['content'] + '#############'
-        self.assertEqual(item['name'], 'Basic syntax')
-        self.assertEqual(item['url'], 'language.basic-syntax.php')
+        #print '##########' + item['content'] + '#############'
+        self.assertEqual(item['name'], 'FAQ: Frequently Asked Questions')
+        self.assertEqual(item['url'], 'faq.php')
         self.assertIsNotNone(item['content'])
         self.assertEqual(item['path'], [])
-        self.assertEqual(len(list(result)), 24)
+        self.assertEqual(len(list(result)), 25)
 

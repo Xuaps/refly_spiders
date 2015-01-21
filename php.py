@@ -5,7 +5,6 @@ import re
 import HTMLParser
 from refly_scraper.items import ReferenceItem
 
-
 class PhpSpider(scrapy.Spider):
     name = 'PHP'
     excluded_path = ['PHP Manual', 'Language Reference', 'Table of Contents']
@@ -150,7 +149,7 @@ class PhpSpider(scrapy.Spider):
                 
                 if len(response.xpath(fullcriteria).extract())>0:
                     returnedvalue = response.xpath(fullcriteria).extract()[0]
-                    return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'')
+                    return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'').replace(u'\xa0','')
         else:
                 if len(response.xpath(criteria).extract())>0:
                     return response.xpath(criteria).extract()[0]
@@ -162,8 +161,9 @@ class PhpSpider(scrapy.Spider):
     def MarkSourceCode(self, content, response):
         snipetsmethod = response.xpath('//div[@class="methodsynopsis dc-description"]').extract()
         snipetsclass = response.xpath('//div[@class="classsynopsis"]').extract()
-        snipetsphpcode = response.xpath('//div[@class="phpcode"]').extract()
-        snipets = snipetsmethod + snipetsclass + snipetsphpcode
+        """ this case is particular because of codec issue"""
+        content = content.replace('<div class="phpcode"><code>','<pre><code>').replace('</code></div>','</code></pre>')
+        snipets = snipetsmethod + snipetsclass   
         for snipet in snipets:
             content = content.replace(snipet, '<pre><code>' + snipet + '</code></pre>')
         return content
