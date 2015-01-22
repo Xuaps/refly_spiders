@@ -10,6 +10,7 @@ from refly_scraper.items import ReferenceItem
 
 
 class DotNetSpider(CrawlSpider):
+ 
     name = '.NET'
     excluded_path = [u'MSDN Library', u'.NET Development', u'.NET Framework 4.5 and 4.6 Preview']
     allowed_domains = ['microsoft.com']
