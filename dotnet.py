@@ -14,24 +14,20 @@ class DotNetSpider(CrawlSpider):
     name = '.NET'
     excluded_path = [u'MSDN Library', u'.NET Development', u'.NET Framework 4.5 and 4.6 Preview']
     allowed_domains = ['microsoft.com']
-    rules = (Rule(LinkExtractor(allow_domains=allowed_domains,restrict_xpaths='//*[@class="toclevel2"]'), callback='parse_item', follow=True),)
-    visited = ['http://msdn.microsoft.com/en-us/library/ff361664(v=vs.110).aspx',
-              'http://msdn.microsoft.com/en-us/library/w0x726c2(v=vs.110).aspx',
-              ]
-    filterscontent = []
-    filtersname = []
-    filtersalias = []
+    rules = (Rule(LinkExtractor(allow_domains=allowed_domains,allow = (r'\/en-us\/library\/.*\(v\=vs\.110\)\.aspx'), restrict_xpaths='//*[@class="toclevel2"]'), callback='parse_item', follow=True),)
+    filtersname = [
+        {'filter': u'//div[@class="toclevel1 current"]/a[1]', 'extract': u'/text()'},
+        {'filter': u'//h1[@class="title"]', 'extract': u''}]
+    filterscontent = [
+        {'filter': u'//div[@id="mainBody"]','extract': u''}
+        ]
+
     start_urls = (
         'http://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx',
     )
 
     def __init__(self, *a, **kw):
-      self.filtersname = [
-        {'filter': u'//div[@class="toclevel1 current"]/a[1]', 'extract': u'/text()'},
-        {'filter': u'//h1[@class="title"]', 'extract': u''}]
-      self.filterscontent = [
-        {'filter': u'//div[@id="mainBody"]','extract': u''}
-        ]
+      scrapy.log.start(self.name+'.log',scrapy.log.INFO, False)
       super(DotNetSpider, self).__init__(*a, **kw)
     def parse_start_url(self, response):
         return list(self.parse_item(response))
@@ -44,20 +40,8 @@ class DotNetSpider(CrawlSpider):
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop().decode('utf-8')
         reference['content'] = self.TransformLinks(self.removeTabs(response,self.getExistingNode(response,self.filterscontent)),response)
         reference['path'] = [p for p in response.xpath('//div[@id="tocnav"]/div[@data-toclevel<1]/a/text()').extract() if p not in self.excluded_path]
-        yield reference
+        return reference
 
-        #urls = [self.visit(urlparse.urljoin(response.url, url)) for url in self.filterLink(response,'//div[@class="tocnav"]//a/@href','(\/en-us\/library\/.*\(v=vs\.110\).aspx)') if urlparse.urljoin(response.url, url) not in self.visited]
-        urls = [self.visit(urlparse.urljoin(response.url, url)) for url in response.xpath('//a[re:test(@href, "^\/en-us\/library\/.*\(v=vs\.110\).aspx$")]/@href').extract() if urlparse.urljoin(response.url, url) not in self.visited]
-
-
-
-        for i in urls:
-           
-            yield i
-
-    def visit(self, url):
-        self.visited.append(url)
-        return scrapy.Request(url, callback=self.parse)
 
     def resolveType(self, url, name):
         strtype = name.split(' ').pop()

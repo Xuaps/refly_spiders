@@ -3,19 +3,29 @@ import scrapy
 import urlparse
 import re
 from refly_scraper.items import ReferenceItem
+from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.linkextractors import LinkExtractor
 
-
-class JsSpider(scrapy.Spider):
+class JsSpider(CrawlSpider):
     name = 'JavaScript'
     excluded_path = ['MDN', 'Web technology for developers']
     allowed_domains = ['mozilla.org']
-    visited = []
-    regex = u''
+    rules = (Rule(LinkExtractor(allow_domains=allowed_domains, allow = ("\/en-US\/docs\/Web\/JavaScript\/Reference\/[\w\*\/]*")) , callback = 'parse_item', follow = True), 
+            )
     start_urls = (
         'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
     )
 
-    def parse(self, response):
+
+    def __init__(self, *a, **kw):
+      scrapy.log.start(self.name+'.log',scrapy.log.INFO, False)
+      super(JsSpider, self).__init__(*a, **kw)
+
+    def parse_start_url(self, response):
+        return list(self.parse_item(response))
+
+
+    def parse_item(self, response):
         reference = ReferenceItem()
         reference['name'] = response.xpath('//h1/text()').extract()[0]
         reference['alias'] = reference['name']
@@ -24,14 +34,6 @@ class JsSpider(scrapy.Spider):
         reference['path'] = [p for p in response.css('.crumbs').xpath('.//a/text()').extract() if p not in self.excluded_path]
 
         yield reference
-
-        urls = [self.visit(urlparse.urljoin(response.url, url)) for url in response.xpath('//a[re:test(@href, "^\/en-US\/docs\/Web\/JavaScript\/Reference((?!\\$|#).)*$")]/@href').extract() if url not in self.visited]
-        for i in urls:
-            yield i
-
-    def visit(self, url):
-        self.visited.append(url)
-        return scrapy.Request(url, callback=self.parse)
 
     def resolveType(self, url, name):
         if re.search(r'^.*Statements\/((?!\/).)*$',url)!=None:

@@ -4,24 +4,29 @@ import urlparse
 import re
 import HTMLParser
 from refly_scraper.items import ReferenceItem
+from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.linkextractors import LinkExtractor
 
-class PhpSpider(scrapy.Spider):
+
+class PhpSpider(CrawlSpider):
     name = 'PHP'
     excluded_path = ['PHP Manual', 'Language Reference', 'Table of Contents']
     allowed_domains = ['php.net']
-    visited = []
-    filterscontent = []
-    filtersname = []
-    filtersalias = []
+    rules = (Rule(LinkExtractor(allow_domains=allowed_domains,deny=(r'.*\.php\.net'),  allow = (r'\/manual\/en\/.*\.php')) , callback = 'parse_item', follow = True),
+            )
+
     start_urls = (
         'http://php.net/manual/en/index.php',
     )
-
-    def __init__(self):
-      #scrapy.log.start(self.name+'.log',scrapy.log.CRITICAL, False)
+    
+    def __init__(self, *a, **kw):
+      scrapy.log.start(self.name+'.log',scrapy.log.INFO, False)
+      super(PhpSpider, self).__init__(*a, **kw)
+      
+      
       self.filtersalias = [
         {'filter': '//li[@class="current"]/a','extract': '/text()'}
-      ]
+      ] 
       self.filtersname = [
         {'filter': u'//div[@class="reference"]//h1[@class="title"]', 'extract': u''},
         {'filter': u'//h1[@class="refname"]','extract': u''},
@@ -52,7 +57,10 @@ class PhpSpider(scrapy.Spider):
         {'filter': '//div[@class="part"]','extract': ''},
         {'filter': '//div[@class="set"]','extract': ''}]
 
-    def parse(self, response):
+    def parse_start_url(self, response):
+        return list(self.parse_item(response))
+
+    def parse_item(self, response):
         self.__init__()
         reference = ReferenceItem()
         fullname =  self.getExistingNode(response,self.filtersname)
@@ -65,16 +73,7 @@ class PhpSpider(scrapy.Spider):
         reference['content'] = self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,self.filterscontent),fullname),response)
         reference['path'] = [p for p in response.xpath('//*[@id="breadcrumbs-inner"]//li/a/text()').extract() if p not in self.excluded_path]
 
-        yield reference
-
-        urls = [self.visit(urlparse.urljoin(response.url, url)) for url in response.xpath('//a[re:test(@href, "^((?!\/).)*\.php$")]/@href').extract() if urlparse.urljoin(response.url, url) not in self.visited]
-
-        for i in urls:
-            yield i
-
-    def visit(self, url):
-        self.visited.append(url)
-        return scrapy.Request(url, callback=self.parse)
+        return reference
 
     def resolveType(self, url, name):
         if re.search(r'^.*types.*$',url)!=None:
@@ -146,7 +145,7 @@ class PhpSpider(scrapy.Spider):
             for composedcriteria in criteria:
                 filtercriteria = composedcriteria['filter']
                 fullcriteria = filtercriteria + composedcriteria['extract']
-                
+                print str(response)
                 if len(response.xpath(fullcriteria).extract())>0:
                     returnedvalue = response.xpath(fullcriteria).extract()[0]
                     return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'').replace(u'\xa0','')
