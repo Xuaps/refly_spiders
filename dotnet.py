@@ -27,8 +27,9 @@ class DotNetSpider(CrawlSpider):
     )
 
     def __init__(self, *a, **kw):
-      scrapy.log.start(self.name+'.log',scrapy.log.INFO, False)
       super(DotNetSpider, self).__init__(*a, **kw)
+
+
     def parse_start_url(self, response):
         return list(self.parse_item(response))
 
@@ -40,7 +41,7 @@ class DotNetSpider(CrawlSpider):
         reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop().decode('utf-8')
         reference['content'] = self.TransformLinks(self.removeTabs(response,self.getExistingNode(response,self.filterscontent)),response)
         reference['path'] = [p for p in response.xpath('//div[@id="tocnav"]/div[@data-toclevel<1]/a/text()').extract() if p not in self.excluded_path]
-        return reference
+        yield reference
 
 
     def resolveType(self, url, name):

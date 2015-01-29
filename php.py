@@ -20,7 +20,6 @@ class PhpSpider(CrawlSpider):
     )
     
     def __init__(self, *a, **kw):
-      scrapy.log.start(self.name+'.log',scrapy.log.INFO, False)
       super(PhpSpider, self).__init__(*a, **kw)
       
       
@@ -73,7 +72,7 @@ class PhpSpider(CrawlSpider):
         reference['content'] = self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,self.filterscontent),fullname),response)
         reference['path'] = [p for p in response.xpath('//*[@id="breadcrumbs-inner"]//li/a/text()').extract() if p not in self.excluded_path]
 
-        return reference
+        yield reference
 
     def resolveType(self, url, name):
         if re.search(r'^.*types.*$',url)!=None:
@@ -145,7 +144,6 @@ class PhpSpider(CrawlSpider):
             for composedcriteria in criteria:
                 filtercriteria = composedcriteria['filter']
                 fullcriteria = filtercriteria + composedcriteria['extract']
-                print str(response)
                 if len(response.xpath(fullcriteria).extract())>0:
                     returnedvalue = response.xpath(fullcriteria).extract()[0]
                     return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'').replace(u'\xa0','')

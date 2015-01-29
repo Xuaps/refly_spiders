@@ -16,5 +16,3 @@ class PhpParserTest(unittest.TestCase):
         self.assertEqual(item['url'], 'faq.php')
         self.assertIsNotNone(item['content'])
         self.assertEqual(item['path'], [])
-        self.assertEqual(len(list(result)), 25)
-

@@ -8,7 +8,7 @@ from refly_spiders.js import JsSpider
 class JavaScriptParserTest(unittest.TestCase):
     def test_parse(self):
         response = HtmlResponse(url='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference', 
-        	body=open('./tests/data/javascript_StopIteration.html').read())
+        	body=open('./tests/data/javascript_json.parse.html').read())
         spider = JsSpider()
 
         result = spider.parse(response)

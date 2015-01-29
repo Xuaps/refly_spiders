@@ -10,7 +10,7 @@ class JsSpider(CrawlSpider):
     name = 'JavaScript'
     excluded_path = ['MDN', 'Web technology for developers']
     allowed_domains = ['mozilla.org']
-    rules = (Rule(LinkExtractor(allow_domains=allowed_domains, allow = ("\/en-US\/docs\/Web\/JavaScript\/Reference\/[\w\*\/]*")) , callback = 'parse_item', follow = True), 
+    rules = (Rule(LinkExtractor(allow_domains=allowed_domains, deny=(r".*\$.*"), allow = ("\/en-US\/docs\/Web\/JavaScript\/Reference\/[\w\*\/]*")) , callback = 'parse_item', follow = True), 
             )
     start_urls = (
         'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
@@ -18,8 +18,7 @@ class JsSpider(CrawlSpider):
 
 
     def __init__(self, *a, **kw):
-      scrapy.log.start(self.name+'.log',scrapy.log.INFO, False)
-      super(JsSpider, self).__init__(*a, **kw)
+        super(JsSpider, self).__init__(*a, **kw)
 
     def parse_start_url(self, response):
         return list(self.parse_item(response))
