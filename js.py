@@ -6,7 +6,7 @@ from refly_scraper.items import ReferenceItem
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 
-class JsSpider(CrawlSpider):
+class JsSpider(SpiderBase):
     name = 'JavaScript'
     excluded_path = ['MDN', 'Web technology for developers']
     allowed_domains = ['mozilla.org']
@@ -16,23 +16,23 @@ class JsSpider(CrawlSpider):
         'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
     )
 
+    author_info = u'<p>© 2015 Mozilla Contributors.<br />Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br/>{link}</p>'
+    baseuri = '/'
+    xpathname = '//h1/text()'
+    xpathalias = ''
+    xpathcontent = '//article'
+    xpathpath = '//nav[@class="crumbs"]//a/text()'
 
     def __init__(self, *a, **kw):
         super(JsSpider, self).__init__(*a, **kw)
 
-    def parse_start_url(self, response):
-        return list(self.parse_item(response))
 
+    def getContent(self, response, xpathpattern):
+        return  self.appendAuthorInfo(self.TransformLinks(self.getExistingNode(response,xpathpattern),response),response.url)
 
-    def parse_item(self, response):
-        reference = ReferenceItem()
-        reference['name'] = response.xpath('//h1/text()').extract()[0]
-        reference['alias'] = reference['name']
-        reference['url'] = urlparse.urlsplit(response.url)[2]
-        reference['content'] = self.TransformLinks(response.xpath('//article').extract()[0],response)
-        reference['path'] = [p for p in response.css('.crumbs').xpath('.//a/text()').extract() if p not in self.excluded_path]
-
-        yield reference
+    def appendAuthorInfo(self, content,url):
+        content += self.author_info.replace('{link}','<a href="' + url + '">'+ url +'</a>')
+        return content
 
     def resolveType(self, url, name):
         if re.search(r'^.*Statements\/((?!\/).)*$',url)!=None:

@@ -9,13 +9,19 @@ import HTMLParser
 from refly_scraper.items import ReferenceItem
 
 
-class DotNetSpider(CrawlSpider):
+class DotNetSpider(SpiderBase):
  
     name = '.NET'
     excluded_path = [u'MSDN Library', u'.NET Development', u'.NET Framework 4.5 and 4.6 Preview']
     allowed_domains = ['microsoft.com']
     rules = (Rule(LinkExtractor(allow_domains=allowed_domains,allow = (r'\/en-us\/library\/.*\(v\=vs\.110\)\.aspx'), restrict_xpaths='//*[@class="toclevel2"]'), callback='parse_item', follow=True),)
-    filtersname = [
+
+    author_info = u'<p>© 2015 Microsoft Corporation. All rights reserved.<br/>{Link}</p>'
+
+    baseuri = '/dotnet/'
+    xpathalias = ''
+
+    xpathname = [
         {'filter': u'//div[@class="toclevel1 current"]/a[1]', 'extract': u'/text()'},
         {'filter': u'//h1[@class="title"]', 'extract': u''}]
     filterscontent = [
@@ -33,16 +39,14 @@ class DotNetSpider(CrawlSpider):
     def parse_start_url(self, response):
         return list(self.parse_item(response))
 
-    def parse_item(self, response):
-        self.__init__()
-        reference = ReferenceItem()
-        reference['name'] = self.unescape(re.sub(u'<[^>]*>', u'', self.getExistingNode(response,self.filtersname))).decode('utf-8')
-        reference['alias'] = reference['name']
-        reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop().decode('utf-8')
-        reference['content'] = self.TransformLinks(self.removeTabs(response,self.getExistingNode(response,self.filterscontent)),response)
-        reference['path'] = [p for p in response.xpath('//div[@id="tocnav"]/div[@data-toclevel<1]/a/text()').extract() if p not in self.excluded_path]
-        yield reference
 
+    #Overwrites
+    def getContent(self, response, xpathpattern):
+        return  self.appendAuthorInfo(self.TransformLinks(self.removeTabs(response, self.getExistingNode(response,xpathpattern)),response),response.url)
+
+    def appendAuthorInfo(self, content,url):
+        content += self.author_info.replace('{link}','<a href="' + url + '">'+ url +'</a>')
+        return content
 
     def resolveType(self, url, name):
         strtype = name.split(' ').pop()

@@ -8,7 +8,7 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 
 
-class PhpSpider(CrawlSpider):
+class PhpSpider(SpiderBase):
     name = 'PHP'
     excluded_path = ['PHP Manual', 'Language Reference', 'Table of Contents']
     allowed_domains = ['php.net']
@@ -18,7 +18,7 @@ class PhpSpider(CrawlSpider):
     start_urls = (
         'http://php.net/manual/en/index.php',
     )
-    
+    author_info = u'<p>© 1997–2015 The PHP Documentation Group.<br/>Licensed under the Creative Commons Attribution License v3.0 or later.<br/>{link}</p>'
     def __init__(self, *a, **kw):
       super(PhpSpider, self).__init__(*a, **kw)
       
@@ -59,20 +59,13 @@ class PhpSpider(CrawlSpider):
     def parse_start_url(self, response):
         return list(self.parse_item(response))
 
-    def parse_item(self, response):
-        self.__init__()
-        reference = ReferenceItem()
-        fullname =  self.getExistingNode(response,self.filtersname)
-        reference['name'] = self.remove_tags(fullname)
-        reference['alias'] = self.getExistingNode(response,self.filtersalias)
-        if reference['alias'] == u'':
-            reference['alias'] = reference['name']
-        reference['type'] = u''
-        reference['url'] = urlparse.urlsplit(response.url)[2].split('/').pop()
-        reference['content'] = self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,self.filterscontent),fullname),response)
-        reference['path'] = [p for p in response.xpath('//*[@id="breadcrumbs-inner"]//li/a/text()').extract() if p not in self.excluded_path]
 
-        yield reference
+    def getContent(self, response, xpathpattern):
+        return  self.appendAuthorInfo(self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,xpathpattern),self.fullname),response),response.url)
+
+    def appendAuthorInfo(self, content,url):
+        content += self.author_info.replace('{link}','<a href="' + url + '">'+ url +'</a>')
+        return content
 
     def resolveType(self, url, name):
         if re.search(r'^.*types.*$',url)!=None:

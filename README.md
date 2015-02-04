@@ -31,6 +31,7 @@ Add the following global configuration to your spider.
 * _excluded_path_  a list of items that will be ignore from the path
 * _rules_, a set of rules, for defining the links to be processed through [LinkExtractor](http://doc.scrapy.org/en/latest/topics/link-extractors.html) class
 * _start_urls_, the initial urls.
+* _author_info_, the information in html format about the original author of the documentation. it will be append at the end every reference.
 * _baseuri_, the root uri of the processed references (if path does not contain docset, it shoud be added here)
 * _xpathname_, xpath expression to extract the title of the reference, tipically, “Printf”, “Math.sqrt”, etc.
 * _xpathalias_, name of the reference that will be used in the path(in most cases it matches with the name of the reference)
@@ -49,6 +50,7 @@ SpiderBase contains five methods to extract the different piece of information f
 * _getUrl_
 * _getContent_
 * _getPath_
+* _appendAuthorInfo_
 
 
 Inform about Issues
