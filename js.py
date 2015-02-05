@@ -50,3 +50,18 @@ class JsSpider(SpiderBase):
 
     def getSlashUrl(self,path, name):
         if name!='':
+            return u'/'+('/'.join(path)+'/'+name).lower().replace(u' ', u'_').replace('[', '.').replace(']', '')
+        else:
+            if len(path)>1:
+                return u'/'+('/'.join(path)).lower().replace(u' ', u'_').replace('[', '.').replace(']', '')
+            else:
+                return None
+
+    def TransformLinks(self,content,response):
+        validlink = re.compile(u'(\/en-US\/docs\/Web\/JavaScript\/Reference.*)')
+        links = response.xpath('//a/@href').extract()
+        for link in links:
+            if validlink.match(link) is None:
+                if urlparse.urlparse(link).scheme=='':
+                    content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link) + '"',1)
+        return content
