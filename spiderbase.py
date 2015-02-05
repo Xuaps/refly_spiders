@@ -2,18 +2,15 @@
 import scrapy
 import urlparse
 import re
-import ConfigParser
 from refly_scraper.items import ReferenceItem
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
-
 
 class SpiderBase(CrawlSpider):
     excluded_path = ['MDN', 'Web technology for developers']
     allowed_domains = ['mozilla.org']
     rules = ()
     start_urls = ()
-    author_info = ''
 
     def __init__(self, *a, **kw):
         super(SpiderBase, self).__init__(*a, **kw)
@@ -52,8 +49,9 @@ class SpiderBase(CrawlSpider):
   
 
     def getContent(self, response, xpathpattern):
-        return  self.appendAuthorInfo(self.getExistingNode(response,xpathpattern).decode('utf-8'),response.url)
+        return  self.getExistingNode(response,xpathpattern).decode('utf-8')
   
+
     def getPath(self, response, xpathpattern):
         return [p.replace(u'\\',u'-').replace(u'/',u'-') for p in response.xpath(xpathpattern).extract() if p not in self.excluded_path]
 
@@ -106,6 +104,3 @@ class SpiderBase(CrawlSpider):
     def filter_Chars(self, text):
         return text.replace(u'\u200b', u'').replace(u'\u00a0',u'').replace(u'\xa0',u'').replace(u'\xb6',u'').replace(u'\u2014',u'-')
 
-    def appendAuthorInfo(self, content, url):
-        content += self.author_info+ '<br/><a href="' + url + '">'+ url +'</a>'
-        return content

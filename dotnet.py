@@ -7,6 +7,8 @@ import urlparse
 import re
 import HTMLParser
 from refly_scraper.items import ReferenceItem
+from spiderbase import SpiderBase
+
 
 
 class DotNetSpider(SpiderBase):
@@ -16,17 +18,16 @@ class DotNetSpider(SpiderBase):
     allowed_domains = ['microsoft.com']
     rules = (Rule(LinkExtractor(allow_domains=allowed_domains,allow = (r'\/en-us\/library\/.*\(v\=vs\.110\)\.aspx'), restrict_xpaths='//*[@class="toclevel2"]'), callback='parse_item', follow=True),)
 
-    author_info = u'<p>© 2015 Microsoft Corporation. All rights reserved.<br/>{Link}</p>'
-
     baseuri = '/dotnet/'
     xpathalias = ''
 
     xpathname = [
         {'filter': u'//div[@class="toclevel1 current"]/a[1]', 'extract': u'/text()'},
         {'filter': u'//h1[@class="title"]', 'extract': u''}]
-    filterscontent = [
+    xpathcontent = [
         {'filter': u'//div[@id="mainBody"]','extract': u''}
         ]
+    xpathpath = '//div[@id="tocnav"]/div[@data-toclevel<1]/a/text()'
 
     start_urls = (
         'http://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx',
@@ -36,22 +37,19 @@ class DotNetSpider(SpiderBase):
       super(DotNetSpider, self).__init__(*a, **kw)
 
 
-    def parse_start_url(self, response):
-        return list(self.parse_item(response))
-
+    #Overwrites
+    def getUrl(self, response):
+        return urlparse.urlsplit(response.url)[2].split('/').pop().decode('utf-8')
 
     #Overwrites
     def getContent(self, response, xpathpattern):
-        return  self.appendAuthorInfo(self.TransformLinks(self.removeTabs(response, self.getExistingNode(response,xpathpattern)),response),response.url)
+        return  self.TransformLinks(self.removeTabs(response, self.getExistingNode(response,xpathpattern)),response)
 
-    def appendAuthorInfo(self, content,url):
-        content += self.author_info.replace('{link}','<a href="' + url + '">'+ url +'</a>')
-        return content
 
     def resolveType(self, url, name):
         strtype = name.split(' ').pop()
         if strtype == 'Library':
-          return 'others'
+          return 'guide'
         elif strtype == 'Methods' or strtype=='Method':
           return 'method'
         elif strtype == 'Property':
@@ -61,30 +59,6 @@ class DotNetSpider(SpiderBase):
         else:
           return 'class'
 
-    def getSlashUrl(self,path, name):
-        if name!='':
-          if len(path)>0:
-            return unicode(u'/dotnet/'+('/'.join(path) + '/' + name)).replace('"','').replace("'","").replace(' ', '_').lower()
-          else:
-            return u'/dotnet/' + name.lower().replace('"','').replace("'","").replace(' ', '_').lower()
-        else:
-          if len(path)>0:
-            return unicode(u'/dotnet/'+('/'.join(path))).replace('"','').replace("'","").replace(' ', '_').lower()
-          else:
-            return None
-
-    def getExistingNode(self, response, criteria):
-        if isinstance(criteria, list):
-            for composedcriteria in criteria:
-                filtercriteria = composedcriteria['filter']
-                fullcriteria = filtercriteria + composedcriteria['extract']
-                
-                if len(response.xpath(fullcriteria).extract())>0:
-                    returnedvalue = response.xpath(fullcriteria).extract()[0]
-                    return returnedvalue.replace(u'\u200b', u'')
-        else:
-            return response.xpath(criteria).extract()[0]
-        return u''
 
     def removeTabs(self,response,content):
         for tabs in response.xpath('//div[@class="codeSnippetContainerTabs"]').extract():
@@ -98,7 +72,7 @@ class DotNetSpider(SpiderBase):
         return htmltext.strip()
 
     def TransformLinks(self,content,response):
-        validlink = re.compile(u'http:\/\/msdn\.microsoft\.com(\/en-us\/library\/.*\(v=vs\.110\)\.aspx)')
+        validlink = re.compile(u'https:\/\/msdn\.microsoft\.com\/en-us\/library\/(.*\(v=vs\.110\)\.aspx)')
         links = response.xpath('//a/@href').extract()
         for link in links:
             match = validlink.match(link)
@@ -106,3 +80,4 @@ class DotNetSpider(SpiderBase):
                 content = content.replace('"' + link + '"', '"' + match.group(1) + '"',1)
 
         return content
+

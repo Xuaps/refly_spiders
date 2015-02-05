@@ -5,6 +5,7 @@ import re
 from refly_scraper.items import ReferenceItem
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
+from spiderbase import SpiderBase
 
 class JsSpider(SpiderBase):
     name = 'JavaScript'
@@ -12,11 +13,11 @@ class JsSpider(SpiderBase):
     allowed_domains = ['mozilla.org']
     rules = (Rule(LinkExtractor(allow_domains=allowed_domains, deny=(r".*\$.*"), allow = ("\/en-US\/docs\/Web\/JavaScript\/Reference\/[\w\*\/]*")) , callback = 'parse_item', follow = True), 
             )
+
     start_urls = (
         'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
     )
-
-    author_info = u'<p>© 2015 Mozilla Contributors.<br />Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br/>{link}</p>'
+    
     baseuri = '/'
     xpathname = '//h1/text()'
     xpathalias = ''
@@ -26,13 +27,8 @@ class JsSpider(SpiderBase):
     def __init__(self, *a, **kw):
         super(JsSpider, self).__init__(*a, **kw)
 
-
     def getContent(self, response, xpathpattern):
-        return  self.appendAuthorInfo(self.TransformLinks(self.getExistingNode(response,xpathpattern),response),response.url)
-
-    def appendAuthorInfo(self, content,url):
-        content += self.author_info.replace('{link}','<a href="' + url + '">'+ url +'</a>')
-        return content
+        return  self.TransformLinks(self.getExistingNode(response,xpathpattern),response)
 
     def resolveType(self, url, name):
         if re.search(r'^.*Statements\/((?!\/).)*$',url)!=None:
@@ -54,18 +50,3 @@ class JsSpider(SpiderBase):
 
     def getSlashUrl(self,path, name):
         if name!='':
-            return u'/'+('/'.join(path)+'/'+name).lower().replace(u' ', u'_').replace('[', '.').replace(']', '')
-        else:
-            if len(path)>1:
-                return u'/'+('/'.join(path)).lower().replace(u' ', u'_').replace('[', '.').replace(']', '')
-            else:
-                return None
-
-    def TransformLinks(self,content,response):
-        validlink = re.compile(u'(\/en-US\/docs\/Web\/JavaScript\/Reference.*)')
-        links = response.xpath('//a/@href').extract()
-        for link in links:
-            if validlink.match(link) is None:
-                if urlparse.urlparse(link).scheme=='':
-                    content = content.replace('"' + link + '"', '"' + urlparse.urljoin('https://developer.mozilla.org', link) + '"',1)
-        return content

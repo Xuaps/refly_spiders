@@ -6,6 +6,7 @@ import HTMLParser
 from refly_scraper.items import ReferenceItem
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
+from spiderbase import SpiderBase
 
 
 class PhpSpider(SpiderBase):
@@ -18,20 +19,21 @@ class PhpSpider(SpiderBase):
     start_urls = (
         'http://php.net/manual/en/index.php',
     )
-    author_info = u'<p>© 1997–2015 The PHP Documentation Group.<br/>Licensed under the Creative Commons Attribution License v3.0 or later.<br/>{link}</p>'
+    
     def __init__(self, *a, **kw):
       super(PhpSpider, self).__init__(*a, **kw)
       
-      
-      self.filtersalias = [
+    baseuri = '/php/'
+
+    xpathalias = [
         {'filter': '//li[@class="current"]/a','extract': '/text()'}
       ] 
-      self.filtersname = [
+    xpathname = [
         {'filter': u'//div[@class="reference"]//h1[@class="title"]', 'extract': u''},
         {'filter': u'//h1[@class="refname"]','extract': u''},
-		{'filter': u'//h2[@class="title"]','extract': u''},
-		{'filter': u'//div[@class="section"]//h2[@class="title"]','extract': u''},
-		{'filter': u'//div[@class="sect1"]//h2[@class="title"]','extract': u''},
+	{'filter': u'//h2[@class="title"]','extract': u''},
+	{'filter': u'//div[@class="section"]//h2[@class="title"]','extract': u''},
+	{'filter': u'//div[@class="sect1"]//h2[@class="title"]','extract': u''},
         {'filter': u'//div[@class="reference"]//h1[@class="title"]','extract': u''},
         {'filter': u'//table[@class="doctable table"]//caption//strong','extract': u''},
         {'filter': u'//div[@class="chapter"]//h1','extract': u''},
@@ -42,7 +44,7 @@ class PhpSpider(SpiderBase):
         {'filter': u'//h1[@class="title"]', 'extract': u''},
         {'filter': u'//h1[@class="title"]','extract': u''},
         {'filter': u'//h2[@class="title"]','extract': u''}]
-      self.filterscontent = [
+    xpathcontent = [
         {'filter': '//div[@id="legalnotice"]','extract': ''},
         {'filter': '//div[@class="refentry"]','extract': ''},
         {'filter': '//div[@class="sect1"]','extract': ''},
@@ -56,16 +58,22 @@ class PhpSpider(SpiderBase):
         {'filter': '//div[@class="part"]','extract': ''},
         {'filter': '//div[@class="set"]','extract': ''}]
 
-    def parse_start_url(self, response):
-        return list(self.parse_item(response))
+    xpathalias = '//li[@class="current"]/a/text()'
+    
+    xpathpath = '//*[@id="breadcrumbs-inner"]//li/a/text()'
+    
+    #Overwrites
+    def getUrl(self, response):
+        return urlparse.urlsplit(response.url)[2].split('/').pop()
 
+    #Overwrites
+    def getName(self, response, xpathpattern):
+        self.fullname = self.getExistingNode(response,xpathpattern)
+        return self.remove_tags(self.fullname)
 
     def getContent(self, response, xpathpattern):
-        return  self.appendAuthorInfo(self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,xpathpattern),self.fullname),response),response.url)
+        return  self.MarkSourceCode(self.RemoveTitle(self.getExistingNode(response,xpathpattern),self.fullname),response)
 
-    def appendAuthorInfo(self, content,url):
-        content += self.author_info.replace('{link}','<a href="' + url + '">'+ url +'</a>')
-        return content
 
     def resolveType(self, url, name):
         if re.search(r'^.*types.*$',url)!=None:
@@ -119,32 +127,6 @@ class PhpSpider(SpiderBase):
         else:
             return "others";
 
-    def getSlashUrl(self,path, name):
-        path = [item.replace('/','-') for item in path]
-        if name!='':
-          if len(path)>0:
-            return (u'/php/'+('/'.join(path)+'/'+name.replace('/', '-').replace('\\', '-'))).replace('"','').replace("'","").replace(' ', '_').lower()
-          else:
-            return u'/php/' + name.replace('\\', '-').replace('/', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
-        else:
-          if len(path)>0:
-            return (u'/php/'+('/'.join(path))).replace('\\', '-').lower().replace('"','').replace("'","").replace(' ', '_').lower()
-          else:
-            return None
-
-    def getExistingNode(self, response, criteria):
-        if isinstance(criteria, list):
-            for composedcriteria in criteria:
-                filtercriteria = composedcriteria['filter']
-                fullcriteria = filtercriteria + composedcriteria['extract']
-                if len(response.xpath(fullcriteria).extract())>0:
-                    returnedvalue = response.xpath(fullcriteria).extract()[0]
-                    return returnedvalue.replace(u'\u200b', u'').replace(u'\u00a0',u'').replace(u'\xa0','')
-        else:
-                if len(response.xpath(criteria).extract())>0:
-                    return response.xpath(criteria).extract()[0]
-        return u''
-
     def RemoveTitle(self,content,title):
         return content.replace(title, '')
 
@@ -158,5 +140,3 @@ class PhpSpider(SpiderBase):
             content = content.replace(snipet, '<pre><code>' + snipet + '</code></pre>')
         return content
 
-    def remove_tags(self,text):
-        return re.sub('<[^>]*>', '', text)
